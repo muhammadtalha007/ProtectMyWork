@@ -31,7 +31,7 @@
                         </div>
                         <div class="login-form">
                             <div class="input-box mt-30">
-                                <input type="email" placeholder="Email*" name="emailAddress" required>
+                                <input type="email" placeholder="Email*" name="email" required>
                             </div>
                             <div class="input-box mt-30">
                                 <input type="password" name="password" placeholder="Password*">

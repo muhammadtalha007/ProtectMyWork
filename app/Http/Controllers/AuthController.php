@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Subscription;
 use App\User;
 use App\UserCardDetails;
 use App\UserTokens;
@@ -51,8 +52,12 @@ class AuthController extends Controller
                 $token->user_id = $user->id;
                 $token->token = $request->certificateToken + 5;
                 $token->save();
-                Session::put('userId', $user->id);
-                session()->flash('msg', 'Link Sent Successfully! Please check your inbox.');
+
+                $subscription = new Subscription();
+                $subscription->user_id = $user->id;
+                $oneYearOn = date('Y-m-d',strtotime(date("Y-m-d", time()) . " + 365 day"));
+                $subscription->subscription_expiry = $oneYearOn;
+                session()->flash('msg', 'Login Credentials sent to your email! Please check your inbox.');
                 //Email
                 $subject = new SendEmailService(new EmailSubject("Welcome to " . env('APP_NAME') . '. Here is your Credentials to Login!'));
                 $mailTo = new EmailAddress($request->emailAddress);
@@ -84,6 +89,7 @@ class AuthController extends Controller
                     Session::put('userId', $user->id);
                     return redirect('dashboard');
                 } else {
+
                     return redirect()->back()->withErrors(['Invalid Credentials. Please Try Again!']);
                 }
             } else {

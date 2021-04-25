@@ -561,7 +561,7 @@ p {
       .header-nav .navigation .navbar .navbar-toggler .toggler-icon {
         width: 30px;
         height: 2px;
-        background-color: #fff;
+        background-color: black;
         margin: 5px 0;
         display: block;
         position: relative;
@@ -1719,14 +1719,15 @@ p {
     left: 0;
     height: 100%;
     width: 100%;
-    background: #ff4f4f;
+    /*background: #ff4f4f;*/
     -webkit-transition: all 0.4s ease-out 0s;
     -moz-transition: all 0.4s ease-out 0s;
     -ms-transition: all 0.4s ease-out 0s;
     -o-transition: all 0.4s ease-out 0s;
     transition: all 0.4s ease-out 0s;
     z-index: -4;
-    opacity: 0; }
+    /*opacity: 0; */
+  }
   .sevices-item svg {
     height: 60px; }
     .sevices-item svg g path {
@@ -1774,11 +1775,14 @@ p {
   .sevices-item:hover::before {
     opacity: 1; }
   .sevices-item:hover .title {
-    color: #fff; }
+    /*color: #fff; */
+  }
   .sevices-item:hover p {
-    color: #fff; }
+    /*color: #fff; */
+  }
   .sevices-item:hover svg g path {
-    fill: #fff; }
+    /*fill: #fff; */
+  }
   .sevices-item:hover .services-overlay-1, .sevices-item:hover .services-overlay-2, .sevices-item:hover .services-overlay-3 {
     right: 0; }
   .sevices-item .services-overlay-1 {

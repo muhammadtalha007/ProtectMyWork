@@ -12,18 +12,24 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//Route::get('/', function () {
-//    return view('welcome');
-//})->middleware('checkAuth');
-//Route::get('/working-tutorial', "DomainsController@tutorialWorking")->middleware('dashboard')->name('home')->middleware('dashboard');
-//Route::get('add-password', "PasswordsController@addPassword")->middleware('dashboard');
-//Route::post('add-password', "PasswordsController@savePassword")->middleware('dashboard');
-//Route::post('/domain/update', "DomainsController@updateDomain")->middleware('dashboard');
-//Route::post('/domain/delete', "DomainsController@deleteDomain")->middleware('dashboard');
-//Route::get('edit/domain/{id}', "DomainsController@editDomain")->middleware('dashboard');
 Auth::routes();
 Route::get('/', function () {
     return view('welcome');
+});
+Route::get('/faqs', function () {
+    return view('faqs');
+});
+Route::get('/search-work', function () {
+    return view('search-work');
+});
+Route::get('/reviews', function () {
+    return view('reviews');
+});
+Route::get('/contact', function () {
+    return view('contact');
+});
+Route::get('/features', function () {
+    return view('features');
 });
 Route::get('/register', function () {
     return view('auth.register');
@@ -33,23 +39,18 @@ Route::get('/login', function () {
 });
 Route::post('register-user', "AuthController@signup");
 Route::post('login-user', "AuthController@login");
-
-
-//Route::get('/', "AdminController@loginPage")->middleware('checkAuth');
-Route::get('/get-chat-ping-count', "CustomerController@getChatCount");
-Route::post('/admin/login', "AdminController@login")->name('admin.login');
-//Route::get('admin-dashboard', "AdminController@adminDashboard");
-Route::post('admin-logout', "AdminController@logout")->name('admin.logout');
-
-//Route::get('fbx', function (){
-//  return view('fbx');
-//});
-
 Route::get('logout-user', function (){
     \Illuminate\Support\Facades\Session::flush();
     \Illuminate\Support\Facades\Auth::logout();
     return redirect('/');
 })->name('logout-user');
+
+
+
+//dashboard routes
+Route::get('dashboard', "DashboardController@dashboard")->middleware('dashboard');
+
+
 
 
 
