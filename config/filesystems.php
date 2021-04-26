@@ -64,6 +64,10 @@ return [
             'url' => env('AWS_URL'),
             'endpoint' => env('AWS_ENDPOINT'),
         ],
+        'data' => [
+            'driver' => 'local',
+            'root'   =>   base_path().'/data',
+        ],
 
     ],
 

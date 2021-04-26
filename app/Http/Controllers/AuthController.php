@@ -57,6 +57,7 @@ class AuthController extends Controller
                 $subscription->user_id = $user->id;
                 $oneYearOn = date('Y-m-d',strtotime(date("Y-m-d", time()) . " + 365 day"));
                 $subscription->subscription_expiry = $oneYearOn;
+                $subscription->save();
                 session()->flash('msg', 'Login Credentials sent to your email! Please check your inbox.');
                 //Email
                 $subject = new SendEmailService(new EmailSubject("Welcome to " . env('APP_NAME') . '. Here is your Credentials to Login!'));

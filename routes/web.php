@@ -49,6 +49,8 @@ Route::get('logout-user', function (){
 
 //dashboard routes
 Route::get('dashboard', "DashboardController@dashboard")->middleware('dashboard');
+Route::get('upload-new-work', "DashboardController@showUploadNewWorkPage")->middleware('dashboard');
+Route::post('saving-new-work', "DashboardController@savingNewWork");
 
 
 

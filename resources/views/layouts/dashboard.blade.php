@@ -115,8 +115,8 @@ $user =  \App\User::where('id',\Illuminate\Support\Facades\Session::get('userId'
                                 <span>MY PROTECTED WORK</span>
                             </a>
                         </li>
-                        <li class="" style="border: 1px solid white;border-bottom: 0px">
-                            <a href="{{url('upload-new-work')}}" >
+                        <li class="{{\Request::is('upload-new-work') ? 'bgactivelink' : ''}}" style="border: 1px solid white;border-bottom: 0px">
+                            <a class="{{\Request::is('upload-new-work') ? 'coloractivelink' : ''}}" href="{{url('upload-new-work')}}" >
 {{--                                <i class="fas fa-users"></i>--}}
                                 <span>UPLOAD NEW WORK</span>
                             </a>
