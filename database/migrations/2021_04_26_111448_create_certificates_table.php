@@ -19,6 +19,7 @@ class CreateCertificatesTable extends Migration
             $table->string('title');
             $table->timestamps();
         });
+        \Illuminate\Support\Facades\DB::statement("ALTER TABLE certificates AUTO_INCREMENT = 1000000000;");
     }
 
     /**

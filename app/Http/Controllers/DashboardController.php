@@ -26,6 +26,12 @@ class DashboardController extends Controller
         return view('dashboard.upload-new-work');
     }
 
+    public function showMyProtectedWorksPage()
+    {
+        $certificates = Certificates::where('user_id', Session::get('userId'))->get();
+        return view('dashboard.my-protected-works')->with(['certificates' => $certificates]);
+    }
+
     public function savingNewWork(Request $request)
     {
         if (!$request->hasfile('fileOne')) {
