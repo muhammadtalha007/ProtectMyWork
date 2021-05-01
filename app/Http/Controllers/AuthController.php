@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\CertificateFiles;
+use App\Certificates;
 use App\Subscription;
 use App\User;
 use App\UserCardDetails;
@@ -103,6 +105,24 @@ class AuthController extends Controller
 
     function generateRandomString($length = 10) {
         return substr(str_shuffle(str_repeat($x='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length/strlen($x)) )),1,$length);
+    }
+
+    public function findprotectedwork(Request $request){
+        try {
+            if(Certificates::where('id', $request->id)->where('password', $request->password)->exists()){
+                $certificate = Certificates::where('id', $request->id)->first();
+                $certificate->files = CertificateFiles::where('certificate_id', $certificate->id)->get();
+                $certificate->user = User::where('id', $certificate->user_id)->first();
+                return view('view-certificate')->with(['certificate' => $certificate]);
+            }else{
+                return redirect()->back()->withErrors(['Invalid Reference Number or Password. Please Try Again!']);
+
+            }
+        }catch (\Exception $exception){
+            return redirect()->back()->withErrors([$exception->getMessage()]);
+
+        }
+
     }
 
     public function login(Request $request)
