@@ -109,8 +109,8 @@ $user =  \App\User::where('id',\Illuminate\Support\Facades\Session::get('userId'
                                 <span>DASHBOARD</span>
                             </a>
                         </li>
-                        <li class="" style="border: 1px solid white;border-bottom: 0px">
-                            <a href="{{url('my-protected-work')}}">
+                        <li  class="{{\Request::is('my-protected-work') ? 'bgactivelink' : ''}}" style="border: 1px solid white;border-bottom: 0px">
+                            <a class="{{\Request::is('my-protected-work') ? 'coloractivelink' : ''}}" href="{{url('my-protected-work')}}">
 {{--                                <i class="fas fa-users"></i>--}}
                                 <span>MY PROTECTED WORK</span>
                             </a>
@@ -121,20 +121,20 @@ $user =  \App\User::where('id',\Illuminate\Support\Facades\Session::get('userId'
                                 <span>UPLOAD NEW WORK</span>
                             </a>
                         </li>
-                        <li class="" style="border: 1px solid white;border-bottom: 0px">
-                            <a href="{{url('add-more-tokens')}}">
+                        <li class="{{\Request::is('add-more-tokens') ? 'bgactivelink' : ''}}" style="border: 1px solid white;border-bottom: 0px">
+                            <a class="{{\Request::is('add-more-tokens') ? 'coloractivelink' : ''}}" href="{{url('add-more-tokens')}}">
 {{--                                <i class="fas fa-envelope-open"></i>--}}
                                 <span>ADD MORE TOKENS</span>
                             </a>
                         </li>
-                        <li class="" style="border: 1px solid white;border-bottom: 0px">
-                            <a href="{{url('personal-details')}}">
+                        <li class="{{\Request::is('personal-details') ? 'bgactivelink' : ''}}" style="border: 1px solid white;border-bottom: 0px" >
+                            <a  class="{{\Request::is('personal-details') ? 'coloractivelink' : ''}}" href="{{url('personal-details')}}">
 {{--                                <i class="fas fa-envelope-open"></i>--}}
                                 <span>PERSONAL DETAILS</span>
                             </a>
                         </li>
-                        <li class="" style="border: 1px solid white;border-bottom: 0px">
-                            <a href="{{url('billing')}}">
+                        <li class="{{\Request::is('billing') ? 'bgactivelink' : ''}}" style="border: 1px solid white;border-bottom: 0px">
+                            <a class="{{\Request::is('billing') ? 'coloractivelink' : ''}}" href="{{url('billing')}}">
 {{--                                <i class="fas fa-envelope-open"></i>--}}
                                 <span>BILLING</span>
                             </a>

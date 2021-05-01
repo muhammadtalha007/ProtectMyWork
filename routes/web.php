@@ -50,8 +50,20 @@ Route::get('logout-user', function (){
 //dashboard routes
 Route::get('dashboard', "DashboardController@dashboard")->middleware('dashboard');
 Route::get('upload-new-work', "DashboardController@showUploadNewWorkPage")->middleware('dashboard');
-Route::post('saving-new-work', "DashboardController@savingNewWork");
+Route::get('add-more-tokens', "DashboardController@addMoreTokens")->middleware('dashboard');
+Route::get('personal-details', "DashboardController@personalDetails")->middleware('dashboard');
+Route::get('billing', "DashboardController@billing")->middleware('dashboard');
+Route::get('delete-certificate/{id}', "DashboardController@deleteCertificate")->middleware('dashboard');
+Route::post('saving-new-work', "DashboardController@savingNewWork")->middleware('dashboard');
+Route::post('set-certificate-password', "DashboardController@resetCertificatePassword")->middleware('dashboard');
+Route::post('save-new-token', "DashboardController@saveNewToken")->middleware('dashboard');
+Route::post('save-profile-info', "DashboardController@saveProfileInfo")->middleware('dashboard');
+Route::post('update-card-info', "DashboardController@updateCardInfo")->middleware('dashboard');
 Route::get('my-protected-work', "DashboardController@showMyProtectedWorksPage")->middleware('dashboard');
+Route::get('cancel-auto-renew', "DashboardController@cancelAutoRenew")->middleware('dashboard');
+Route::get('turnon-auto-renew', "DashboardController@turnOnAutoRenew")->middleware('dashboard');
+Route::get('view-certificate/{id}', "DashboardController@viewCertificate")->middleware('dashboard');
+Route::get('download-certificate-file/{certificateId}/{fileId}', "DashboardController@downloadCertificateFile");
 
 
 

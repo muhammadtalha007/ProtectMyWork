@@ -8,11 +8,12 @@ class ForgotPasswordMessage
     {
         $emailBody = '
    <body>
-             <div style="margin-left: 50px;font-size: 25px;padding-top: 40px">Here Is Your Credentials To Login:</div><br>
-             <div style="margin-left: 50px;font-size: 25px;padding-top: 40px">Email: '. $email .'</div><br>
-             <div style="margin-left: 50px;font-size: 25px;padding-top: 40px">Password: '. $password .'</div><br>
- <div style="padding-top: 30px;padding-bottom: 40px">
- <a href="'. url(''). '/login" style=" background-color: #1AAA55;
+   <div style="margin: 0 auto;max-width: 600px;background: rgba(211,211,211,0.68);padding: 30px">
+             <div style="margin-left: 10px;margin-right: 10px;font-size: 17px;padding-top: 2px">Here is Your Credentials To Login:</div>
+             <div style="margin-left: 10px;margin-right: 10px;font-size: 17px;padding-top: 2px">Email: '. $email .'</div>
+             <div style="margin-left: 10px;margin-right: 10px;font-size: 17px;padding-top: 2px">Password: '. $password .'</div>
+             <div style="padding-top: 30px;padding-bottom: 40px">
+ <a href="'. url(''). '/login" style=" background-color: #e6736f;
   border: none;
   color: white;
   padding: 10px 27px;
@@ -21,8 +22,10 @@ class ForgotPasswordMessage
   display: inline-block;
   font-size: 18px;
   cursor: pointer;
-  border-radius: 3px;margin-left: 50px">Login</a>
+  border-radius: 3px;margin-left: 5px">Login</a>
   </div>
+</div><br>
+ </div>
             </body>
             ';
         return $emailBody;

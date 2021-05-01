@@ -1,0 +1,208 @@
+/* New Certificate */
+
+.pmw-certificate {
+    border: 3px solid #d9d9d9;
+    width: 85%;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+.pmw-certificate-subcont {
+    border: 1px solid #d9d9d9;
+    height: auto;
+    margin: 5px;
+    background: url('/assets/images/certbg.png') no-repeat;
+    background-size: cover;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.cert-logo {
+    background: url('/assets/images/logo.png') no-repeat;
+    width: 100px;
+    height: 60px;
+    display: block;
+    background-size: contain;
+    margin: 0 auto;
+}
+
+.cert-first-section {
+    font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
+    padding-top: 53px;
+}
+
+.ct-title {
+    font-size: 22px;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+    color: #646464;
+    position: relative;
+}
+
+.ct-title:after {
+    content: "";
+    height: 1px;
+    width: 40%;
+    background: #d9d9d9;
+    position: absolute;
+    left: 0;
+    bottom: -12px;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ct-subtitle {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    color: #828282;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+.cd-line-title, .cd-line {
+    font-weight: bold;
+    font-size: 16px;
+    color: #828282;
+    text-transform: uppercase;
+    width: 45%;
+    display: inline-block;
+    float: left;
+}
+
+.cd-line {
+    text-transform: capitalize !important;
+}
+
+.ct-item {
+    margin-bottom: 10px;
+    overflow: auto;
+}
+
+.cert-details {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+.cc-sig {
+    font-family: Across;
+    font-size: 65px;
+}
+
+.cert-certified {
+    text-align: center;
+    width: 50%;
+    float: right;
+}
+
+.cc-cc {
+    overflow: auto;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.cc-one {
+    font-size: 14px;
+    color: #646464;
+}
+
+.cc-three {
+    font-size: 15px;
+    font-weight: bold;
+    color: #646464;
+}
+
+.cc-address {
+    font-size: 14px;
+    color: #646464;
+}
+
+.certified-files {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.cf-title {
+    font-size: 22px;
+    text-transform: uppercase;
+    display: block;
+    color: #646464;
+    position: relative;
+}
+
+.cf-title:after {
+    content: "";
+    height: 1px;
+    width: 40%;
+    background: #d9d9d9;
+    position: absolute;
+    left: 0;
+    bottom: -12px;
+}
+
+.cf-items {
+    margin-top: 35px;
+}
+
+.cf-items a {
+    font-size: 16px;
+    color: #646464 !important;
+}
+
+.cf-item {
+    margin-bottom: 20px;
+}
+
+.dnlwd {
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.copyright-footer {
+    width: 40%;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 0px;
+    text-align: center;
+    color: #646464;
+    font-size: 16px;
+}
+
+.copyright-footer a {
+    color: #646464 !important;
+    text-decoration: none !important;
+}
+
+.copyright-footer a:focus, .copyright-footer a:visited, .copyright-footer a:hover, .copyright-footer a:active {
+    color: #646464 !important;
+    text-decoration: none !important;
+}
+
+.certified-email-details {
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 60px;
+}
+
+.ced-container {
+    margin-top: 30px;
+    font-size: 16px;
+    color: #646464;
+}
+
+.ced-line {
+    margin-bottom: 10px;
+}
+
+.footer{padding:36px 0 27px; background:#2d3038; float:left; width:100%; color:#fff;}
+.footer p{text-align:center; padding:36px 0 0;}
+ul.footer-list{padding:0;font-family: 'Lato'; width:100%; text-align:center; margin:0;float:none;}
+ul.footer-list li{color:#fff; display:inline; list-style-position:inside; list-style-type:none;margin:0; padding:0 3px 0 0; font-size:14px; line-height:18px;}
+ul.footer-list li a{ padding:0 6px 0 2px; color:#fff; text-decoration:none;}
+ul.footer-list li a:hover{color:#e6736f;}
+.copyright{background:#32353d;padding:26px 0 33px 0; margin:0px !important; font-family: 'Lato'; width:100%; float:left;color:#fff;font-size:14px;line-height:18px;text-align:center;}
+.copyright a { color: #337ab7; text-decoration: none;}

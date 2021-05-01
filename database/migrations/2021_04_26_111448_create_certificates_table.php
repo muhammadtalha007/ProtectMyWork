@@ -17,6 +17,8 @@ class CreateCertificatesTable extends Migration
             $table->id();
             $table->integer('user_id');
             $table->string('title');
+            $table->string('ip')->nullable();
+            $table->string('password')->nullable();
             $table->timestamps();
         });
         \Illuminate\Support\Facades\DB::statement("ALTER TABLE certificates AUTO_INCREMENT = 1000000000;");

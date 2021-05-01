@@ -15,7 +15,11 @@
                                 Your subscription expires on {{$user->subscription->subscription_expiry ?? 00}}
                             </p>
                             <p>
-                               <a href="#">Cancel Auto Renew</a>
+                                @if(!\App\CancelAutoRenew::where('user_id',\Illuminate\Support\Facades\Session::get('userId'))->exists())
+                               <a href="{{url('cancel-auto-renew')}}" style="color: red">Cancel Auto Renew</a>
+                                @else
+                               <a href="{{url('turnon-auto-renew')}}" style="color: green">Turn On Auto Renew</a>
+                                @endif
                             </p>
                         </div>
 

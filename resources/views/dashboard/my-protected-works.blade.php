@@ -30,27 +30,21 @@
                 @if(count($certificates) != 0)
                     @foreach($certificates as $key => $item)
                         <tr>
-                            <td>{{$item->id}}</td>
+                            <td><a href="{{url('view-certificate')}}/{{$item->id}}">{{$item->id}}</a></td>
                             <td>{{$item->title}}</td>
                             <td>{{$item->created_at}}</td>
                             <td>
-                                <a href="{{url('/delete-certificate/'.$item->id)}}">
-                                    <button class="btn btn-danger">Delete</button>
+                                <a href="{{url('/delete-certificate/'.$item->id)}}" style="display: none" id="deletebtn{{$item->id}}">
                                 </a>
+                                    <button class="btn btn-danger" onclick="deleteCertificate({{$item->id}})">Delete</button>
+
                             </td>
                             <td>
                                 {{--                                <a href="{{url('/delete-certificate/'.$item->id)}}">--}}
                                 <div class="dropdown">
-                                    <button class="btn btn-primary dropdown-toggle" type="button"
-                                            data-toggle="dropdown"
+                                    <button onclick="resetModal(`{{$item->id}}`,`{{$item->title}}`)" data-toggle="modal" data-target="#myModal" class="btn btn-primary" type="button"
                                             style="background: #32353e;letter-spacing: 4px;width: 136px;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;text-align: center;color: #fff;text-transform: uppercase;padding: 7px 0 7px;font-family: 'futura-normalregular';font-size: 15px;border: none;cursor: pointer;">
-                                        RESET
-                                        <span class="caret"></span></button>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">HTML</a></li>
-                                        <li><a href="#">CSS</a></li>
-                                        <li><a href="#">JavaScript</a></li>
-                                    </ul>
+                                        RESET</button>
                                 </div>
                                 {{--                                </a>--}}
                             </td>
@@ -66,88 +60,43 @@
                 </tbody>
             </table>
         </div>
-        {{--        <form method="post" action="{{url("/saving-new-work")}}" enctype="multipart/form-data">--}}
-        {{--            {{csrf_field()}}--}}
-        {{--            <div class="form-group row" style="width: 600px;margin-top: 30px;margin-bottom: 30px">--}}
-        {{--                <div class="col-lg-3">--}}
-        {{--                    <label for="email">Title Of Work*:</label>--}}
-        {{--                </div>--}}
-        {{--                <div class="col-lg-9">--}}
-        {{--                    <input type="text" class="form-control" placeholder="Enter Title" name="title" id="title" required>--}}
-        {{--                </div>--}}
-        {{--            </div>--}}
-        {{--            <div class="form-group row">--}}
-        {{--                <div class="col-lg-3">--}}
-        {{--                    <input style="display: none" type="file" id="fileOne" name="fileOne[]" onchange="setName('fileOne','fileOneName')">--}}
-        {{--                    <button onclick="document.getElementById('fileOne').click()" type="button"--}}
-        {{--                            style="background: #e67370;letter-spacing: 4px;width: 187px;float: left;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;text-align: center;color: #fff;text-transform: uppercase;padding: 7px 0 7px;font-family: 'futura-normalregular';font-size: 15px;border: none;cursor: pointer;">--}}
-        {{--                        CHOOSE FILE--}}
-        {{--                    </button>--}}
-        {{--                </div>--}}
-        {{--                <div class="col-lg-9">--}}
-        {{--                    <input style="height: 42px!important;" type="text" class="form-control" placeholder="File One*"--}}
-        {{--                           name="fileOneName" id="fileOneName" required>--}}
-        {{--                </div>--}}
-        {{--            </div>--}}
-        {{--            <div class="form-group row">--}}
-        {{--                <div class="col-lg-3">--}}
-        {{--                    <input style="display: none" type="file" id="fileTwo" name="fileTwo[]"  onchange="setName('fileTwo','fileTwoName')">--}}
-        {{--                    <button onclick="document.getElementById('fileTwo').click()" type="button"--}}
-        {{--                            style="background: #e67370;letter-spacing: 4px;width: 187px;float: left;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;text-align: center;color: #fff;text-transform: uppercase;padding: 7px 0 7px;font-family: 'futura-normalregular';font-size: 15px;border: none;cursor: pointer;">--}}
-        {{--                        CHOOSE FILE--}}
-        {{--                    </button>--}}
-        {{--                </div>--}}
-        {{--                <div class="col-lg-9">--}}
-        {{--                    <input style="height: 42px!important;" type="text" class="form-control" placeholder="File Two"--}}
-        {{--                           name="fileTwoName" id="fileTwoName">--}}
-        {{--                </div>--}}
-        {{--            </div>--}}
-        {{--            <div class="row form-group ">--}}
-        {{--                <div class="col-lg-3">--}}
-        {{--                    <input style="display: none" type="file" id="fileThree" name="fileThree[]" onchange="setName('fileThree','fileThreeName')">--}}
-        {{--                    <button onclick="document.getElementById('fileThree').click()" type="button"--}}
-        {{--                            style="background: #e67370;letter-spacing: 4px;width: 187px;float: left;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;text-align: center;color: #fff;text-transform: uppercase;padding: 7px 0 7px;font-family: 'futura-normalregular';font-size: 15px;border: none;cursor: pointer;">--}}
-        {{--                        CHOOSE FILE--}}
-        {{--                    </button>--}}
-        {{--                </div>--}}
-        {{--                <div class="col-lg-9">--}}
-        {{--                    <input style="height: 42px!important;" type="text" class="form-control" placeholder="File Three"--}}
-        {{--                           name="fileThreeName" id="fileThreeName">--}}
-        {{--                </div>--}}
-        {{--            </div>--}}
-        {{--            <div class="form-group row">--}}
-        {{--                <div class="col-lg-3">--}}
-        {{--                    <input style="display: none" type="file" id="fileFour" name="fileFour[]" onchange="setName('fileFour','fileFourName')">--}}
-        {{--                    <button onclick="document.getElementById('fileFour').click()" type="button"--}}
-        {{--                            style="background: #e67370;letter-spacing: 4px;width: 187px;float: left;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;text-align: center;color: #fff;text-transform: uppercase;padding: 7px 0 7px;font-family: 'futura-normalregular';font-size: 15px;border: none;cursor: pointer;">--}}
-        {{--                        CHOOSE FILE--}}
-        {{--                    </button>--}}
-        {{--                </div>--}}
-        {{--                <div class="col-lg-9">--}}
-        {{--                    <input style="height: 42px!important;" type="text" class="form-control" placeholder="File Four"--}}
-        {{--                           name="fileFourName" id="fileFourName">--}}
-        {{--                </div>--}}
-        {{--            </div>--}}
-        {{--            <div class="form-group row">--}}
-        {{--                <div class="col-lg-3">--}}
-        {{--                    <input style="display: none" type="file" id="fileFive" name="fileFive[]" onchange="setName('fileFive','fileFiveName')">--}}
-        {{--                    <button onclick="document.getElementById('fileFive').click()" type="button"--}}
-        {{--                            style="background: #e67370;letter-spacing: 4px;width: 187px;float: left;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;text-align: center;color: #fff;text-transform: uppercase;padding: 7px 0 7px;font-family: 'futura-normalregular';font-size: 15px;border: none;cursor: pointer;">--}}
-        {{--                        CHOOSE FILE--}}
-        {{--                    </button>--}}
-        {{--                </div>--}}
-        {{--                <div class="col-lg-9">--}}
-        {{--                    <input style="height: 42px!important;" type="text" class="form-control" placeholder="File Five"--}}
-        {{--                           name="fileFiveName" id="fileFiveName">--}}
-        {{--                </div>--}}
-        {{--            </div>--}}
-        {{--            <div class="form-group">--}}
-        {{--                <button type="submit" id="btnFetch"--}}
-        {{--                        style="background: #6fc3e6;letter-spacing: 4px;width: 136px;float: left;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;text-align: center;color: #fff;text-transform: uppercase;padding: 7px 0 7px;font-family: 'futura-normalregular';font-size: 15px;border: none;cursor: pointer;">--}}
-        {{--                    Upload--}}
-        {{--                </button>--}}
-        {{--            </div>--}}
-        {{--        </form>--}}
+    </div>
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title" id="resetheading">Modal Heading</h3>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                   <h5>Reset Password</h5>
+                    <form action="{{url('set-certificate-password')}}" method="post">
+                        @csrf
+                        <input type="hidden" id="certificateId" name="certificateId">
+                        <div>
+                            <input type="text" placeholder="Password" class="form-control" name="password" required>
+                        </div><br>
+                        <div>
+                            <input type="text"  placeholder="ConfirmPassword" class="form-control" name="conpassword" required>
+                        </div><br>
+                        <div>
+                            <button class="btn btn-secondary">SUBMIT</button>
+                        </div>
+                    </form>
+
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
     </div>
     <script>
         function setName(fileId, inputId) {
@@ -155,6 +104,17 @@
             if (files.length > 0) {
                 document.getElementById(inputId).value = files[0].name;
             }
+        }
+
+        function deleteCertificate(id) {
+            if(confirm('Are you sure to delete this certificate (reference no# : ' + id + ')')){
+                document.getElementById('deletebtn'+ id).click();
+            }
+        }
+
+        function resetModal(id, name) {
+            document.getElementById('resetheading').innerText = name + " (ref : " + id + ")";
+            document.getElementById('certificateId').value = id;
         }
     </script>
     <script type="text/javascript">
