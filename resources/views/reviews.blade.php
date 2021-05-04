@@ -5,10 +5,16 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-8">
-                    <div class="section-title text-center">
-                        <span>Testimonial / Reviews</span>
-                        <h3 class="title"><span>Check What’s Our</span> Client Say <span>About Us!</span></h3>
-                    </div> <!-- SECTION TITLE -->
+                    <h2 style="text-align: center;color: #6b9ce8">Reviews</h2>
+                    <div style="margin: 0 auto;max-width: 60px">
+                        <div style="border-bottom: 3px solid #6b9ce8;width: 60px" >
+
+                        </div>
+                    </div>
+{{--                    <div class="section-title text-center">--}}
+{{--                        <span>Testimonial / Reviews</span>--}}
+{{--                        <h3 class="title"><span>Check What’s Our</span> Client Say <span>About Us!</span></h3>--}}
+{{--                    </div> <!-- SECTION TITLE -->--}}
                 </div>
             </div> <!-- row -->
             <div class="row justify-content-center">

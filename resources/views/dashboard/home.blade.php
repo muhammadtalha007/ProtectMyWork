@@ -9,7 +9,7 @@
             <div class="row justify-content-center">
 
                 <div class="col-lg-4 col-md-6 col-sm-9">
-                        <div class="sevices-item" style="height: 300px;padding: 30px">
+                        <div class="sevices-item" style="height: 300px;padding: 30px;border: 2px solid #6b9ce8">
                             <h4 class="title" style="padding-top: 0px">Welcome {{$user->first_name . ' ' . $user->last_name ?? 'user'}}</h4>
                             <p>
                                 Your subscription expires on {{$user->subscription->subscription_expiry ?? 00}}
@@ -25,7 +25,7 @@
 
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-9">
-                        <div class="sevices-item" style="height: 300px;padding: 30px">
+                        <div class="sevices-item" style="height: 300px;padding: 30px;border: 2px solid #6b9ce8">
                             <h4 class="title" style="padding-top: 0px">TOKENS</h4>
                             <p>
                                 YOU HAVE {{$user->tokenDetails->token ?? 0}} CERTIFICATE TOKEN(S) REMAINING

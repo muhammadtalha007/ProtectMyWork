@@ -6,13 +6,19 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-10">
-                    <div class="section-title text-center">
-                        <span>CONTACT US</span>
+                    <h2 style="text-align: center;color: #6b9ce8">CONTACT US</h2>
+                    <div style="margin: 0 auto;max-width: 100px">
+                        <div style="border-bottom: 3px solid #6b9ce8;width: 100px" >
 
-                    </div> <!-- SECTION TITLE -->
+                        </div>
+                    </div>
+{{--                    <div class="section-title text-center">--}}
+{{--                        <span>CONTACT US</span>--}}
+
+{{--                    </div> <!-- SECTION TITLE -->--}}
                 </div>
             </div> <!-- row -->
-            <p>
+            <p style="margin-top: 40px">
                 Please see our contact details below. Feel free to email our tech support directly using the form underneath. We aim to respond within 1 working day. If you are missing an email from us, please check your junk mail before contacting us.
 
 
@@ -33,7 +39,7 @@
                                         <h4 style="color: black">{{\Illuminate\Support\Facades\Session::get("msg")}}</h4>
                                     </div>
                                 @endif
-                                    <h6 class="title" style="font-size: 30px!important;">CONTACT <span>US</span>
+                                    <h6 class="title" style="font-size: 30px!important;margin-top: 10px">CONTACT <span>US</span>
                                     </h6>
                             </div>
                             <div class="login-form">
@@ -49,16 +55,28 @@
                                 <div class="input-box mt-30">
                                     <textarea type="text" class="form-control" placeholder="Message*" name="message" required></textarea>
                                 </div>
+                                <div style="margin-top: 20px">
+                                    <button type="submit" class="main-btn">
+                                        SUBMIT
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-3 mt-30">
-                            <button type="submit" class="main-btn">
-                                SUBMIT
-                            </button>
+                        <div class="col-lg-6">
+                            <div style="margin-top: 100px;margin-left: 50px">
+                                <div style="padding: 5px;">
+                                    Phone : <a href="tel:{{env('APP_PHONE')}}">{{env('APP_PHONE')}}</a>
+                                </div>
+                                <div style="padding: 5px;">
+                                    EMAIL : <a href="mailto:{{env('APP_EMAIL')}}">{{env('APP_EMAIL')}}</a>
+                                </div>
+                                <div style="padding: 5px;">
+                                    Address : {{env('APP_ADDRESS')}}
+                                </div>
+                            </div>
+
+
+
                         </div>
                     </div>
                 </div>

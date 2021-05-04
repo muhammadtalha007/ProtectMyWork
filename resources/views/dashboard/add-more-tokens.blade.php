@@ -47,7 +47,7 @@
                 </div>
             </div>
             <div class="container">
-                <div class="mt-60" style="font-weight: bolder;font-size: 18px;color: #dc6f6b">PAYMENT SUMMARY</div>
+                <div class="mt-60" style="font-weight: bolder;font-size: 18px;color: #6b9ce8">PAYMENT SUMMARY</div>
                 <div class="row">
                     <div class="col-lg-3">
                         <div class="login-title" style="padding-top: 40px!important;">
@@ -76,7 +76,7 @@
             </div>
             <br>
             <div class="container">
-                <div class="mt-60" style="font-weight: bolder;font-size: 18px;color: #dc6f6b">YOUR CARD</div>
+                <div class="mt-60" style="font-weight: bolder;font-size: 18px;color: #6b9ce8">YOUR CARD</div>
                 <p>you can change card details from billing section anytime.</p>
                 <div>
                     <p style="font-size: 20px"><span>*****{{substr($cardNumber, -4)}}</span> <span style="margin-left: 20px">{{$month}}/{{$year}}</span></p>
@@ -85,7 +85,7 @@
             <br>
             <div class="form-group" >
                 <button type="submit"
-                        style="background: #e6736f;letter-spacing: 3px;border: none;color: #fff;cursor: pointer;padding: 1.0rem 3rem;text-transform: uppercase;border-radius: 5px;line-height: 18px;font-size: 15px !important;">
+                        style="background: #6b9ce8;letter-spacing: 3px;border: none;color: #fff;cursor: pointer;padding: 1.0rem 3rem;text-transform: uppercase;border-radius: 5px;line-height: 18px;font-size: 15px !important;">
                     Pay
                 </button>
             </div>

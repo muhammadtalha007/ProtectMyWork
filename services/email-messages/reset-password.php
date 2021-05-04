@@ -14,7 +14,7 @@ class ResetPassword
              <div style="margin-left: 10px;margin-right: 10px;font-size: 17px;padding-top: 2px">Reference no: '.$certificate->id.'</div>
              <div style="margin-left: 10px;margin-right: 10px;font-size: 17px;padding-top: 2px;padding-bottom: 30px">Password: '.$password.'</div>
 
- <a href="'. url(''). '/search-work" style=" background-color: #e6736f;
+ <a href="'. url(''). '/search-work" style=" background-color: #6b9ce8;
   border: none;
   color: white;
   padding: 10px 27px;

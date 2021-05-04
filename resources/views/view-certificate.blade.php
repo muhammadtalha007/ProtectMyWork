@@ -3,7 +3,7 @@
     {{--    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>--}}
     {{--    <div>--}}
     <link href="{{url('')}}/assets/css/certificate.css" rel="stylesheet">
-    <div class="container" style="max-width: 900px;margin-top: 200px;margin-bottom: 50px">
+    <div class="container" style="max-width: 900px;margin-top: 200px;margin-bottom: 100px;">
         @if($errors->any())
             <div class="alert alert-danger">
                 <h4 style="color: black;font-size: 14px">{{$errors->first()}}</h4>
@@ -24,7 +24,7 @@
                 <div class="cert-logo">
                 </div>
 
-                <div class="cert-first-section">
+                <div class="cert-first-section" style="padding-top: 10px">
                     <span class="ct-title">Certificate of protected work</span>
                     <span class="ct-subtitle">Ref Number: {{$certificate->id}} </span>
                     <div class="cert-details">

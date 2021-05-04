@@ -40,6 +40,7 @@ Route::get('/login', function () {
 Route::post('register-user', "AuthController@signup");
 Route::post('login-user', "AuthController@login");
 Route::post('findprotectedwork', "AuthController@findprotectedwork");
+Route::post('sendmessage', "AuthController@sendmessage");
 Route::get('download-certificate-file/{certificateId}/{fileId}', "DashboardController@downloadCertificateFile");
 
 Route::get('logout-user', function (){

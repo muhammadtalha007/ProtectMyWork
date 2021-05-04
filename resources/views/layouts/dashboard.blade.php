@@ -42,7 +42,8 @@
         }
 
         .bgactivelink{
-            background: #d8cbcb!important;
+            background: #eae4e4 !important;
+            color: #6b9ce8!important;
         }
 
         .coloractivelink{
@@ -84,7 +85,7 @@ $user =  \App\User::where('id',\Illuminate\Support\Facades\Session::get('userId'
         <nav id="sidebar" class="sidebar-wrapper">
             <div class="sidebar-content">
                 <div class="sidebar-brand">
-                    <a class="navbar-brand" href="{{ url('/') }}">{{env('APP_NAME')}}</a>
+                    <a class="navbar-brand" href="{{ url('/') }}">Copyright Cover</a>
                     <div id="close-sidebar">
                         <i class="fas fa-times"></i>
                     </div>
@@ -96,7 +97,7 @@ $user =  \App\User::where('id',\Illuminate\Support\Facades\Session::get('userId'
 {{--                             alt="User picture">--}}
 {{--                    </div>--}}
                     <div class="user-info">
-                        <h3 style="color: white">Welcome {{$user->first_name . ' ' . $user->last_name ?? 'user'}}</h3>
+                        <h4 style="color: white">Welcome {{$user->first_name . ' ' . $user->last_name ?? 'user'}}</h4>
                     </div>
                 </div>
 

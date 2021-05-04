@@ -1,12 +1,12 @@
 @extends('layouts.landing-app')
 <!--====== LOGIN PART START ======-->
 @section('content')
-    <section class="login-area singup-area">
-        <div class="login-bg">
-            <div class="login-shape">
-                <img src="{{url('')}}/assets/images/shapes/login-shape.png" alt="">
-            </div>
-        </div>
+    <section class="login-area singup-area" style="margin-bottom: 100px">
+{{--        <div class="login-bg">--}}
+{{--            <div class="login-shape">--}}
+{{--                <img src="{{url('')}}/assets/images/shapes/login-shape.png" alt="">--}}
+{{--            </div>--}}
+{{--        </div>--}}
 
         <form method="post" action="{{url("/register-user")}}">
             {{csrf_field()}}
@@ -24,11 +24,14 @@
                                     <h4 style="color: black">{{\Illuminate\Support\Facades\Session::get("msg")}}</h4>
                                 </div>
                             @endif
-                            <h6 class="title" style="font-size: 30px!important;">COPYRIGHT <span>OWNER</span>
-                                REGISTRATION
-                            </h6>
+                                <h2 style="text-align: center;color: #6b9ce8">OWNER REGISTRATION</h2>
+                                <div style="margin: 0 auto;max-width: 100px">
+                                    <div style="border-bottom: 3px solid #6b9ce8;width: 100px" >
 
-                            <p style="color: #dc6f6b;font-weight: bold;font-size: 23px!important;">ENTER YOUR
+                                    </div>
+                                </div>
+
+                            <p style="color: #6b9ce8;font-weight: bold;font-size: 23px!important;margin-top: 60px">ENTER YOUR
                                 DETAILS</p>
                         </div>
                         <div class="login-form">
@@ -41,15 +44,16 @@
                             <div class="input-box mt-30">
                                 <input type="email" placeholder="Email Address*" name="emailAddress" required>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="login-form">
-                            <div class="input-box mt-140">
+                            <div class="input-box mt-30">
                                 <input type="text" placeholder="Company Name" name="companyName">
                             </div>
                         </div>
                     </div>
+{{--                    <div class="col-lg-6">--}}
+{{--                        <div class="login-form">--}}
+{{--                            --}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                 </div>
             </div>
 
@@ -57,7 +61,7 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="login-title" style="padding-top: 40px!important;">
-                            <p style="color: #dc6f6b;font-weight: bold;font-size: 23px!important;">YOUR LOCATION</p>
+                            <p style="color: #6b9ce8;font-weight: bold;font-size: 23px!important;">YOUR LOCATION</p>
                         </div>
                         <div class="login-form">
                             <div class="input-box mt-30">
@@ -94,7 +98,7 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="login-title" style="padding-top: 40px!important;">
-                            <p style="color: #dc6f6b;font-weight: bold;font-size: 23px!important;">GENERAL INFO</p>
+                            <p style="color: #6b9ce8;font-weight: bold;font-size: 23px!important;">GENERAL INFO</p>
                         </div>
                         <div class="login-form">
                             <div class="input-box mt-30">
@@ -137,7 +141,7 @@
             </div>
 
             <div class="container">
-                <div style="font-weight: bolder;font-size: 27px;color: #dc6f6b">ALL NEW ACCOUNTS RECEIVE 5 FREE
+                <div style="font-weight: bolder;font-size: 27px;color: #6b9ce8">ALL NEW ACCOUNTS RECEIVE 5 FREE
                     CERTIFICATE TOKENS
                 </div>
                 <div class="row">
@@ -181,7 +185,7 @@
             </div>
 
             <div class="container">
-                <div class="mt-60" style="font-weight: bolder;font-size: 27px;color: #dc6f6b">PAYMENT SUMMARY</div>
+                <div class="mt-60" style="font-weight: bolder;font-size: 27px;color: #6b9ce8">PAYMENT SUMMARY</div>
                 <div class="row">
                     <div class="col-lg-3">
                         <div class="login-title" style="padding-top: 40px!important;">
@@ -199,7 +203,7 @@
                     </div>
                     <div class="col-lg-9">
                         <div class="login-title" style="padding-top: 40px!important;">
-                            <div style="font-size: 15px">£ 36.99</div>
+                            <div style="font-size: 15px">£ 19.99</div>
                         </div>
                         <div class="login-title" style="padding-top: 40px!important;">
                             <div style="font-size: 15px">£ <span id="extraCertificateTokens">0</span>.00</div>
@@ -219,7 +223,7 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="login-title" style="padding-top: 40px!important;">
-                            <p style="color: #dc6f6b;font-weight: bold;font-size: 23px!important;">ENTER YOUR CARD
+                            <p style="color: #6b9ce8;font-weight: bold;font-size: 23px!important;">ENTER YOUR CARD
                                 DETAILS</p>
                         </div>
                         <div class="login-form">
@@ -288,7 +292,7 @@
                 <div class="row">
                     <div class="col-lg-3 mt-30">
                         <button type="submit"
-                                style="background: #e6736f;letter-spacing: 3px;border: none;color: #fff;cursor: pointer;padding: 1.0rem 3rem;text-transform: uppercase;width: 100%;border-radius: 5px;line-height: 18px;font-size: 15px !important;">
+                                style="background: #6b9ce8;letter-spacing: 3px;border: none;color: #fff;cursor: pointer;padding: 1.0rem 3rem;text-transform: uppercase;width: 100%;border-radius: 5px;line-height: 18px;font-size: 15px !important;">
                             Pay
                         </button>
                     </div>
@@ -301,9 +305,9 @@
         $(document).ready(function () {
             let num;
             let num2;
-            num = 36.99 * 0.2;
+            num = 19.99 * 0.2;
             document.getElementById('vat20%').innerText = num.toFixed(2);
-            num2 = 36.99 + 7.40;
+            num2 = 19.99 + 4;
             document.getElementById('totalPayableNow').innerText = num2.toFixed(2);
         });
 
@@ -311,9 +315,9 @@
             document.getElementById('extraCertificateTokens').innerText = value;
             let num;
             let num22;
-            num = (36.99 + parseInt(value));
+            num = (19.99 + parseInt(value));
             num = num * 0.2;
-            num22 = 36.99 + num + parseInt(value);
+            num22 = 19.99 + num + parseInt(value);
             // alert(parseInt(num))
             document.getElementById('totalPayableNow').innerText = num22.toFixed(2);
             document.getElementById('vat20%').innerText = num.toFixed(2);

@@ -13,7 +13,7 @@
                 <h4 style="color: black">{{\Illuminate\Support\Facades\Session::get("msg")}}</h4>
             </div>
         @endif
-        <h3 style="letter-spacing: 3px" class="mt-4 mb-3">MY PROTECTED WORKS</h3>
+        <h3 style="letter-spacing: 3px;margin-top: 20px" class="mt-4 mb-3">MY PROTECTED WORKS</h3>
         <p style="font-size: 13px;">Below is a list of all your registered and protected work.</p>
         <div class="px-5 table-responsive">
             <table class="table table-hover">
