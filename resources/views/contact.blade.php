@@ -71,7 +71,8 @@
                                     EMAIL : <a href="mailto:{{env('APP_EMAIL')}}">{{env('APP_EMAIL')}}</a>
                                 </div>
                                 <div style="padding: 5px;">
-                                    Address : {{env('APP_ADDRESS')}}
+                                    Address : {{env('APP_ADDRESS')}} <br>
+                                    Company Registered in England & Wales No. 13335834
                                 </div>
                             </div>
 

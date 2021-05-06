@@ -65,13 +65,13 @@
                         </div>
                         <div class="login-form">
                             <div class="input-box mt-30">
-                                <input type="text" placeholder="Address Line One*" name="addressLineOne" required>
+                                <input type="text" placeholder="Address Line One*" name="addressLineOne" id="addressLineOne" required>
                             </div>
                             <div class="input-box mt-30">
-                                <input type="text" placeholder="City*" name="city" required>
+                                <input type="text" placeholder="City*" name="city" id="city" required>
                             </div>
                             <div class="input-box mt-30">
-                                <input type="text" placeholder="Postal Code*" name="postalCode" required>
+                                <input type="text" placeholder="Postal Code*" id="zipcode" name="postalCode" required>
                             </div>
                         </div>
                     </div>
@@ -81,7 +81,7 @@
                                 <input type="text" placeholder="Address Line Two" name="addressLineTwo">
                             </div>
                             <div class="input-box mt-30">
-                                <input type="text" placeholder="Country/Province*" name="country" required>
+                                <input type="text" placeholder="Country/Province*" name="country" id="state" required>
                             </div>
                             <div class="input-box mt-30">
                                 <select id="selectCountry" name="selectCountry"
@@ -148,7 +148,7 @@
                     <div class="col-lg-6">
                         <div class="login-title" style="padding-top: 40px!important;">
                             <div>To purchase more enter the amount:</div>
-                            <div style="font-size: 17px;font-weight: bold">Additional Certificate Tokens - £1 (ex. VAT)
+                            <div style="font-size: 17px;font-weight: bold">Additional Certificate Tokens - £1
                                 each
                             </div>
                         </div>
@@ -194,9 +194,9 @@
                         <div class="login-title" style="padding-top: 40px!important;">
                             <div style="font-size: 15px;font-weight: bold">Extra Certificate Tokens</div>
                         </div>
-                        <div class="login-title" style="padding-top: 40px!important;">
-                            <div style="font-size: 15px;font-weight: bold">Vat @ 20%</div>
-                        </div>
+{{--                        <div class="login-title" style="padding-top: 40px!important;">--}}
+{{--                            <div style="font-size: 15px;font-weight: bold">Vat @ 20%</div>--}}
+{{--                        </div>--}}
                         <div class="login-title" style="padding-top: 40px!important;">
                             <div style="font-size: 15px;font-weight: bold">Total Payable Now</div>
                         </div>
@@ -208,35 +208,57 @@
                         <div class="login-title" style="padding-top: 40px!important;">
                             <div style="font-size: 15px">£ <span id="extraCertificateTokens">0</span>.00</div>
                         </div>
-                        <div class="login-title" style="padding-top: 40px!important;">
-                            <div style="font-size: 15px">£ <span id="vat20%"></span></div>
-                        </div>
+{{--                        <div class="login-title" style="padding-top: 40px!important;">--}}
+{{--                            <div style="font-size: 15px">£ <span id="vat20%"></span></div>--}}
+{{--                        </div>--}}
                         <div class="login-title" style="padding-top: 40px!important;">
                             <div style="font-size: 15px">£ <span id="totalPayableNow"></span></div>
                         </div>
-                        <input type="hidden" name="totalAmount" id="totalAmount">
+                        <input type="hidden" name="totalAmount" id="totalAmount" value="19.99">
+                        <input type="hidden" id="paymentMethod" name="paymentMethod" value="stripe">
+
                     </div>
                 </div>
             </div>
 
-            <div class="container">
+            <div class="container" style=";margin-top: 50px;">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="login-title" style="padding-top: 20px!important;">
+                            <p style="color: #6b9ce8;font-weight: bold;font-size: 23px!important;">PAYMENT OPTIONS</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container" style="border: 5px solid #6b9ce8;margin-top: 5px;padding: 30px">
                 <div class="row">
                     <div class="col-lg-6">
-                        <div class="login-title" style="padding-top: 40px!important;">
-                            <p style="color: #6b9ce8;font-weight: bold;font-size: 23px!important;">ENTER YOUR CARD
-                                DETAILS</p>
+                        <div class="login-title" style="padding-top: 20px!important;">
+                            <p style="color: #6b9ce8;font-weight: bold;font-size: 23px!important;">1. ENTER YOUR CARD
+                                DETAILS <span style="font-size: 12px">(Powered by Stripe)</span></p>
                         </div>
                         <div class="login-form">
                             <div class="input-box mt-30">
-                                <input type="text" placeholder="Card Holder Name" name="cardHolderName" required>
+                                <input type="text" placeholder="Card Holder Name" name="cardHolderName">
                             </div>
                         </div>
-
+                        <div class="login-form">
+                            <div class="input-box mt-30">
+                                <input type="text" placeholder="Card Number" name="cardNumber">
+                            </div>
+                        </div>
+                        <div class="login-form">
+                            <div class="input-box mt-30">
+                                <input type="text" placeholder="CVV" name="cvv">
+                            </div>
+                        </div>
                         <div class="login-form">
                             <div class="row">
                                 <div class="input-box mt-10 col-lg-6">
                                     <div>Expiry Month</div>
-                                    <select name="expiryMonth" required
+                                    <select name="expiryMonth"
                                             style="width: 100%;border: solid 2px rgba(102, 102, 102, 0.12);border-radius: 5px;height: 45px;padding-left: 30px;background-color: white;">
                                         <option value="01">01</option>
                                         <option value="02">02</option>
@@ -255,7 +277,7 @@
 
                                 <div class="input-box mt-10 col-lg-6">
                                     <div>Expiry Year</div>
-                                    <select name="expiryYear" required
+                                    <select name="expiryYear"
                                             style="width: 100%;border: solid 2px rgba(102, 102, 102, 0.12);border-radius: 5px;height: 45px;padding-left: 30px;background-color: white;">
                                         <option value="2021">2021</option>
                                         <option value="2022">2022</option>
@@ -273,41 +295,63 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
                     <div class="col-lg-6">
-                        <div class="login-form">
-                            <div class="input-box" style="padding-top: 98px">
-                                <input type="text" placeholder="Card Number" required name="cardNumber">
-                            </div>
+                        <div class="login-title" style="padding-top: 20px!important;">
+                            <p style="color: #6b9ce8;font-weight: bold;font-size: 23px!important;">2. PAY BY PAYPAL</p>
                         </div>
-                        <div class="login-form">
-                            <div class="input-box mt-35">
-                                <input type="text" placeholder="CVV" name="cvv" required>
-                            </div>
+                        <div style="padding: 50px">
+
+                            <div id="paypal-button-container-P-1AA545389M2405943MCJIQNA" style="width: 300px"></div>
+                            <script src="https://www.paypal.com/sdk/js?client-id=AQCrLYki8oc2cTaU4xAlFdz2t_lCoHS8m8cHbdjN-ipLQcXYlLiQ-j325-sdhhGcvYHhZTPyqFAK855p&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+                            <script>
+                                paypal.Buttons({
+                                    style: {
+                                        shape: 'rect',
+                                        color: 'gold',
+                                        layout: 'vertical',
+                                        label: 'subscribe',
+                                        width: '300px'
+                                    },
+                                    createSubscription: function(data, actions) {
+                                        return actions.subscription.create({
+                                            /* Creates the subscription */
+                                            plan_id: 'P-1AA545389M2405943MCJIQNA'
+                                        });
+                                    },
+                                    onApprove: function(data, actions) {
+                                        document.getElementById('paymentMethod').value = 'paypal';
+                                        document.getElementById('submitbtnmain').click();
+                                        // alert(data.subscriptionID);
+                                        // You can add optional success message for the subscriber here
+                                    }
+                                }).render('#paypal-button-container-P-1AA545389M2405943MCJIQNA'); // Renders the PayPal button
+                            </script>
                         </div>
+
                     </div>
                 </div>
             </div>
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3 mt-30">
-                        <button type="submit"
+                        <button id="submitbtnmain" type="submit"
                                 style="background: #6b9ce8;letter-spacing: 3px;border: none;color: #fff;cursor: pointer;padding: 1.0rem 3rem;text-transform: uppercase;width: 100%;border-radius: 5px;line-height: 18px;font-size: 15px !important;">
-                            Pay
+                            SUBMIT
                         </button>
                     </div>
                 </div>
             </div>
-
         </form>
     </section>
     <script>
         $(document).ready(function () {
             let num;
             let num2;
-            num = 19.99 * 0.2;
-            document.getElementById('vat20%').innerText = num.toFixed(2);
-            num2 = 19.99 + 4;
+            num = 19.99;
+            // document.getElementById('vat20%').innerText = num.toFixed(2);
+            num2 = 19.99;
             document.getElementById('totalPayableNow').innerText = num2.toFixed(2);
         });
 
@@ -316,13 +360,13 @@
             let num;
             let num22;
             num = (19.99 + parseInt(value));
-            num = num * 0.2;
-            num22 = 19.99 + num + parseInt(value);
+            // num = num * 0.2;
+            // num22 = 19.99 + num + parseInt(value);
             // alert(parseInt(num))
-            document.getElementById('totalPayableNow').innerText = num22.toFixed(2);
-            document.getElementById('vat20%').innerText = num.toFixed(2);
+            document.getElementById('totalPayableNow').innerText = num.toFixed(2);
+            // document.getElementById('vat20%').innerText = num.toFixed(2);
 
-            document.getElementById('totalAmount').value = num22.toFixed(2);
+            document.getElementById('totalAmount').value = num.toFixed(2);
         }
     </script>
     <script>
@@ -364,6 +408,78 @@
             //     alert('Please select a country');
             // else alert('You chose ' + event.target.value + '. Yay, grab a beer!');
         }
+    </script>
+
+
+    <script>
+        var placeSearch, autocomplete;
+        var componentForm = {
+            locality: 'long_name',
+            administrative_area_level_1: 'short_name',
+            postal_code: 'short_name'
+        };
+        if (typeof google === 'undefined') {
+            jQuery.getScript('https://maps.googleapis.com/maps/api/js?key=AIzaSyC141fW_XoCD_dJHMaTygnLX1kDLeTWcwo&libraries=geometry,places', () => {
+                var input = document.getElementById('addressLineOne');
+                autocomplete = new google.maps.places.Autocomplete(input, {types: ['geocode']} );
+                autocomplete.setFields(['address_component']);
+                autocomplete.addListener('place_changed', fillIn);
+            });
+        }
+        else{
+            var input = document.getElementById('addressLineOne');
+            autocomplete = new google.maps.places.Autocomplete(input, {types: ['geocode']} );
+            autocomplete.setFields(['address_component']);
+            autocomplete.addListener('place_changed', fillIn);
+        }
+        function fillIn() {
+            var geocoder = new google.maps.Geocoder();
+            var address = document.getElementById('addressLineOne').value;
+
+            // geocoder.geocode({
+            //     'address': address
+            // }, function(results, status) {
+            //     if (status === google.maps.GeocoderStatus.OK) {
+            //         var latitude = results[0].geometry.location.lat();
+            //         var longitude = results[0].geometry.location.lng();
+            //         document.getElementById('lat').value = latitude;
+            //         document.getElementById('longg').value = longitude;
+            //
+            //         lati = latitude;
+            //         longi = longitude;
+            //         initMap();
+            //     }
+            // });
+
+            var place = autocomplete.getPlace();
+            console.log(place.address_components);
+            for (var i = 0; i < place.address_components.length; i++) {
+                let addressTypes = place.address_components[i].types;
+                for (let k=0;k<addressTypes.length;k++){
+                    var addressType = place.address_components[i].types[k];
+
+                    if (addressType === 'administrative_area_level_1'){
+                        var val = place.address_components[i]['long_name'];
+                        // document.getElementById('city').value = val;
+                        document.getElementById('state').value = val;
+                    }
+                    if (addressType === 'locality'){
+                        var val = place.address_components[i]['long_name'];
+                        document.getElementById('city').value = val;
+                        // document.getElementById('estate').value = val;
+                    }
+                    if (addressType === 'postal_code'){
+                        var val = place.address_components[i]['long_name'];
+                        document.getElementById('zipcode').value = val;
+                        // zipCodeAdded(val);
+                    }
+                }
+
+            }
+        }
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJqJcwaHOlWKivApYFYSjmVobGeKFqGdE&callback=initMap">
     </script>
 
 @endsection

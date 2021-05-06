@@ -1,28 +1,46 @@
 @extends('layouts.landing-app')
 <!--====== BANNER PART START ======-->
 @section('content')
+
     <link href="{{url('')}}/assets/css/works.css" rel="stylesheet">
+
     <section  style="padding-top: 200px;background-image: url('/assets/images/backgroundimage.png')">
 {{--        <div class="banner__bg"></div>--}}
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <h2 style="text-align: center;color: #6b9ce8">COPYRIGHT PROTECTION SERVICE</h2>
-                    <div style="margin: 0 auto;max-width: 230px">
-                        <hr class="new5">
+                    <div style="margin: 0 auto;max-width: 200px">
+                        <div style="border-bottom: 5px solid #6b9ce8;width: 200px" >
 
+                        </div>
                     </div>
-                    <h5 style="color: #6b9ce8;text-align: center">Save Your Work Such As Books, Training Manuals, Music, Songs, Lyrics, Artwork, Portfolio</h5>
+{{--                    <div style="margin: 0 auto;max-width: 230px">--}}
+{{--                        <hr class="new5">--}}
+
+{{--                    </div>--}}
+                    <h5 style="color: #6b9ce8;text-align: center;margin-top: 20px">Save Your Work Such As Books, Training Manuals, Music, Songs, Lyrics, Artwork, Portfolio</h5>
                     <div style="margin: 0 auto;max-width: 1000px">
                         <p style="text-align: center">
                             CopyrightCover is a swift and secure copyright protection service based in the UK. Equipped with a dedicated group of legal
                             experts and IT technicians, we ensure that our clients are fully protected from all modern threats and risk factors across the board.
                         </p>
                     </div>
+
                     <div>
-                        <img src="{{url('')}}/assets/images/banner.png" style="margin-top: -10px">
+{{--                        <a  href="#myModal" data-toggle="modal"  id="play-video" class="video-play-button" title="Play Video">--}}
+{{--                            <span></span>--}}
+{{--                        </a>--}}
+                        <img src="{{url('')}}/assets/images/banner.png" style="margin-top: -20px">
+                        <div
+                            style="margin: 0 auto;max-width: 100px;margin-top: 10px;text-align: center;margin-top: -360px;padding-left: 10px">
+                            <a href="#myModal" data-toggle="modal" id="play-video" class="video-play-button"
+                               title="Play Video">
+                                <span></span>
+                            </a>
+                        </div>
                     </div>
-                    <div style="margin: 0 auto;max-width: 200px;margin-top: 50px;margin-bottom: 100px">
+                    <div style="margin: 0 auto;max-width: 200px;margin-top: 300px;margin-bottom: 100px">
                         <a class="main-btn" href="{{url('register')}}">COPYRIGHT YOUR WORK</a>
                     </div>
 
@@ -493,4 +511,30 @@
         </div>
 
     </div>
+
+{{--    <div id="video-overlay" class="video-overlay">--}}
+{{--        <a class="video-overlay-close">&times;</a>--}}
+{{--    </div>--}}
+
+
+{{--    <script>--}}
+{{--        $('#play-video').on('click', function(e){--}}
+{{--            e.preventDefault();--}}
+{{--            $('#video-overlay').addClass('open');--}}
+{{--            $("#video-overlay").append('<iframe width="560" height="315" src="https://www.youtube.com/embed/ngElkyQ6Rhs" frameborder="0" allowfullscreen></iframe>');--}}
+{{--        });--}}
+
+{{--        $('.video-overlay, .video-overlay-close').on('click', function(e){--}}
+{{--            e.preventDefault();--}}
+{{--            close_video();--}}
+{{--        });--}}
+
+{{--        $(document).keyup(function(e){--}}
+{{--            if(e.keyCode === 27) { close_video(); }--}}
+{{--        });--}}
+
+{{--        function close_video() {--}}
+{{--            $('.video-overlay.open').removeClass('open').find('iframe').remove();--}}
+{{--        };--}}
+{{--    </script>--}}
 @endsection

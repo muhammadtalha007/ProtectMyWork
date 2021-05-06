@@ -14,7 +14,7 @@
             </div>
         @endif
         <h3 style="letter-spacing: 3px" class="mt-4 mb-3">ADD MORE CERTIFICATE TOKENS</h3>
-        <p style="font-size: 13px;">Please select the number of certificate tokens you would like to buy and your payment details. Certificate tokens cost £1 (ex. VAT)
+        <p style="font-size: 13px;">Please select the number of certificate tokens you would like to buy and your payment details. Certificate tokens cost £1 each.
         </p>
         <form method="post" action="{{url("/save-new-token")}}">
             {{csrf_field()}}
@@ -53,9 +53,9 @@
                         <div class="login-title" style="padding-top: 40px!important;">
                             <div style="font-size: 15px;font-weight: bold">Extra Certificate Tokens</div>
                         </div>
-                        <div class="login-title" style="padding-top: 40px!important;">
-                            <div style="font-size: 15px;font-weight: bold">Vat @ 20%</div>
-                        </div>
+{{--                        <div class="login-title" style="padding-top: 40px!important;">--}}
+{{--                            <div style="font-size: 15px;font-weight: bold">Vat @ 20%</div>--}}
+{{--                        </div>--}}
                         <div class="login-title" style="padding-top: 40px!important;">
                             <div style="font-size: 15px;font-weight: bold">Total Payable Now</div>
                         </div>
@@ -64,13 +64,13 @@
                         <div class="login-title" style="padding-top: 40px!important;">
                             <div style="font-size: 15px">£ <span id="extraCertificateTokens">5</span>.00</div>
                         </div>
+{{--                        <div class="login-title" style="padding-top: 40px!important;">--}}
+{{--                            <div style="font-size: 15px">£ <span id="vat20%">1.00</span></div>--}}
+{{--                        </div>--}}
                         <div class="login-title" style="padding-top: 40px!important;">
-                            <div style="font-size: 15px">£ <span id="vat20%">1.00</span></div>
+                            <div style="font-size: 15px">£ <span id="totalPayableNow">5.00</span></div>
                         </div>
-                        <div class="login-title" style="padding-top: 40px!important;">
-                            <div style="font-size: 15px">£ <span id="totalPayableNow">6.00</span></div>
-                        </div>
-                        <input type="hidden" name="totalAmount" id="totalAmount" value="6.00">
+                        <input type="hidden" name="totalAmount" id="totalAmount" value="5.00">
                     </div>
                 </div>
             </div>
@@ -102,15 +102,15 @@
         function calculateCertificateToken(value) {
             document.getElementById('extraCertificateTokens').innerText = value;
             let num;
-            let num22;
+            // let num22;
             num = (parseInt(value));
-            num = num * 0.2;
-            num22 = num + parseInt(value);
+            // num = num * 0.2;
+            // num22 = num + parseInt(value);
             // alert(parseInt(num))
-            document.getElementById('totalPayableNow').innerText = num22.toFixed(2);
-            document.getElementById('vat20%').innerText = num.toFixed(2);
+            document.getElementById('totalPayableNow').innerText = num.toFixed(2);
+            // document.getElementById('vat20%').innerText = num.toFixed(2);
 
-            document.getElementById('totalAmount').value = num22.toFixed(2);
+            document.getElementById('totalAmount').value = num.toFixed(2);
         }
     </script>
     <script type="text/javascript">

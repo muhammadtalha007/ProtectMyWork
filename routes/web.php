@@ -42,6 +42,7 @@ Route::post('login-user', "AuthController@login");
 Route::post('findprotectedwork', "AuthController@findprotectedwork");
 Route::post('sendmessage', "AuthController@sendmessage");
 Route::get('download-certificate-file/{certificateId}/{fileId}', "DashboardController@downloadCertificateFile");
+Route::get('show-image/{fileId}', "DashboardController@showImage");
 
 Route::get('logout-user', function (){
     \Illuminate\Support\Facades\Session::flush();
@@ -67,6 +68,7 @@ Route::get('my-protected-work', "DashboardController@showMyProtectedWorksPage")-
 Route::get('cancel-auto-renew', "DashboardController@cancelAutoRenew")->middleware('dashboard');
 Route::get('turnon-auto-renew', "DashboardController@turnOnAutoRenew")->middleware('dashboard');
 Route::get('view-certificate/{id}', "DashboardController@viewCertificate")->middleware('dashboard');
+Route::get('download-logo/{userId}/{fileId}', "DashboardController@downloadLogo")->middleware('dashboard');
 
 
 

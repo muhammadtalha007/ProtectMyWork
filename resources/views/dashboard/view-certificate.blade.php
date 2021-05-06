@@ -61,7 +61,7 @@
                         <div class="cert-certified">
                             <div class="cc-one">Registration certificate issued &amp; certified by: </div>
                             <div class="cc-sig" style="font-size: 30px">{{env('APP_NAME')}}</div>
-                            <div class="cc-three">{{env('APP_NAME')}} Limited</div>
+{{--                            <div class="cc-three">{{env('APP_NAME')}}</div>--}}
                             <div class="cc-address">{{env('APP_ADDRESS')}}</div>
                         </div>
                     </div>

@@ -252,6 +252,34 @@ class DashboardController extends Controller
         return readfile($file);
     }
 
+    public function showImage($fileId){
+        $file =  base_path('/data') . '/downloads' . '/' . $fileId . '.png';
+        $type = mime_content_type($file);
+        header('Content-Type:' . $type);
+        header('Content-Length: ' . filesize($file));
+        header('Content-Disposition: attachment; filename="Warning-Logo.png"');
+        return readfile($file);
+    }
+
+    public function downloadLogo($userId, $fileId){
+
+        if ($fileId == 0){
+            $file =  base_path('/data') . '/downloads' . '/zipFile.zip';
+        }else{
+            $file =  base_path('/data') . '/downloads' . '/' . $fileId . '.png';
+        }
+
+        $type = mime_content_type($file);
+        header('Content-Type:' . $type);
+        header('Content-Length: ' . filesize($file));
+        if ($fileId == 0){
+            header('Content-Disposition: attachment; filename="Warning-Logo-Zip.zip"');
+        }else{
+            header('Content-Disposition: attachment; filename="Warning-Logo-'.$fileId.'.png" ');
+        }
+        return readfile($file);
+    }
+
     public function savingNewWork(Request $request)
     {
         try {

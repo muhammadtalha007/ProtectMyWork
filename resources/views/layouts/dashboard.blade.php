@@ -61,14 +61,14 @@
 $user =  \App\User::where('id',\Illuminate\Support\Facades\Session::get('userId'))->first();
 ?>
 <div id="app">
-    <nav class="navbar navbar-default" style="background: white">
+    <nav class="navbar navbar-default" id="navtopmain" style="background: white">
         <div class="container-fluid">
 {{--            <div class="navbar-header">--}}
 {{--                <a class="navbar-brand" href="#">WebSiteName</a>--}}
 {{--            </div>--}}
             <ul class="nav navbar-nav" style="float: right">
                 <li ><a href="{{url('')}}">Home</a></li>
-                <li ><a href="{{url('features')}}">Features</a></li>
+{{--                <li ><a href="{{url('features')}}">Features</a></li>--}}
                 <li ><a href="{{url('search-work')}}">Search Work</a></li>
                 <li ><a href="{{url('faqs')}}">FAQS</a></li>
                 <li ><a href="{{url('reviews')}}">Reviews</a></li>
@@ -183,6 +183,11 @@ $user =  \App\User::where('id',\Illuminate\Support\Facades\Session::get('userId'
     }
 
     $(document).ready(function(){
+        document.getElementById('navtopmain').style.display = 'block';
+
+        var x = window.matchMedia("(max-width: 600px)")
+        myFunction(x) // Call listener function at run time
+        x.addListener(myFunction) // Attach listener function on state changes
         if (!Notification) {
             alert('Desktop notifications not available in your browser. Try Chromium.');
             return;
@@ -207,6 +212,15 @@ $user =  \App\User::where('id',\Illuminate\Support\Facades\Session::get('userId'
         setTimeout(function () {
             getCountsFunction();
         }, 60000)
+    }
+
+    function myFunction(x) {
+        if (x.matches) { // If media query matches
+            $(".page-wrapper").removeClass("toggled");
+            document.getElementById('navtopmain').style.display = 'none';
+        } else {
+
+        }
     }
 
     jQuery(function ($) {

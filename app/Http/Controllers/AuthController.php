@@ -28,28 +28,30 @@ class AuthController extends Controller
     {
         try {
             if (!User::where('email', $request->emailAddress)->exists()) {
-                $stripe = \Cartalyst\Stripe\Laravel\Facades\Stripe::setApiKey(env('STRIPE_SECRET'));
-                $token = $stripe->tokens()->create([
-                    'card' => [
-                        'number' => $request->cardNumber,
-                        'exp_month' => $request->expiryMonth,
-                        'exp_year' => $request->expiryYear,
-                        'cvc' => $request->cvv,
-                    ],
-                ]);
+                if ($request->paymentMethod == "stripe"){
+                    $stripe = \Cartalyst\Stripe\Laravel\Facades\Stripe::setApiKey(env('STRIPE_SECRET'));
+                    $token = $stripe->tokens()->create([
+                        'card' => [
+                            'number' => $request->cardNumber,
+                            'exp_month' => $request->expiryMonth,
+                            'exp_year' => $request->expiryYear,
+                            'cvc' => $request->cvv,
+                        ],
+                    ]);
 
-                if (!isset($token['id'])) {
-                    return redirect()->back()->withErrors("Token Id does not Exists! Please try again!");
-                }
+                    if (!isset($token['id'])) {
+                        return redirect()->back()->withErrors("Token Id does not Exists! Please try again!");
+                    }
 
-                $charge = $stripe->charges()->create([
-                    'card' => $token['id'],
-                    'currency' => 'GBP',
-                    'amount' => $request->totalAmount,
-                    'description' => 'wallet',
-                ]);
-                if ($charge['status'] != 'succeeded') {
-                    return redirect()->back()->withErrors("Error in your payment method! Please try again!");
+                    $charge = $stripe->charges()->create([
+                        'card' => $token['id'],
+                        'currency' => 'GBP',
+                        'amount' => $request->totalAmount,
+                        'description' => 'wallet',
+                    ]);
+                    if ($charge['status'] != 'succeeded') {
+                        return redirect()->back()->withErrors("Error in your payment method! Please try again!");
+                    }
                 }
 
                 $user = new User();

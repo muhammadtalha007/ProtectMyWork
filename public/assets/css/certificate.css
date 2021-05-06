@@ -2,16 +2,20 @@
 
 .pmw-certificate {
     border: 3px solid #d9d9d9;
-    width: 85%;
+    width: 100%;
     margin: 0 auto;
     margin-bottom: 40px;
 }
 
 .pmw-certificate-subcont {
-    border: 1px solid #d9d9d9;
+    /*border: 1px solid #d9d9d9;*/
+    /*border: 10px solid transparent;*/
+    /*border-image: url('/assets/images/Border.png') 30 round;*/
+    border: 50px solid transparent;
+    border-image: url("/assets/images/Border.png") 150;
     height: auto;
     margin: 5px;
-    background: url('/assets/images/certbg.png') no-repeat;
+    /*background: url('/assets/images/Background.png') no-repeat;*/
     background-size: cover;
     padding-top: 40px;
     padding-bottom: 40px;
