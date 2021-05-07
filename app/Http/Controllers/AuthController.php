@@ -178,4 +178,16 @@ class AuthController extends Controller
 
 
     }
+
+    public function about(){
+        return view('about');
+    }
+
+    public function userAgreement(){
+        return view('user-agreement');
+    }
+
+    public function privacyPolicy(){
+        return view('privacy-policy');
+    }
 }

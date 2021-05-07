@@ -40,7 +40,7 @@
 
     <!--====== Style css ======-->
     <link rel="stylesheet" href="{{url('')}}/assets/css/style.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--====== jquery js ======-->
     <script src="{{url('')}}/assets/js/vendor/modernizr-3.6.0.min.js"></script>
     <script src="{{url('')}}/assets/js/vendor/jquery-1.12.4.min.js"></script>
@@ -77,12 +77,88 @@
             border: 2px solid #6b9ce8;
             /*border-radius: 5px;*/
         }
+
+        .facustom {
+            padding: 10px;
+            font-size: 20px;
+            width: 40px;
+            text-align: center;
+            text-decoration: none;
+            margin: 5px 2px;
+            border-radius: 50%;
+        }
+
+        .facustom:hover {
+            opacity: 0.7;
+            color: white;
+        }
+
+        .fa-facebook {
+            background: #3B5998;
+            color: white;
+        }
+
+        .fa-twitter {
+            background: #55ACEE;
+            color: white;
+        }
+
+        /*Cookie Consent Begin*/
+        #cookieConsent {
+            background-color: rgba(20,20,20,0.8);
+            min-height: 26px;
+            font-size: 14px;
+            color: #ccc;
+            line-height: 26px;
+            padding: 20px;
+            font-family: "Trebuchet MS",Helvetica,sans-serif;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: none;
+            z-index: 9999;
+        }
+        #cookieConsent a {
+            color: #4B8EE7;
+            text-decoration: none;
+        }
+        #closeCookieConsent {
+            float: right;
+            display: inline-block;
+            cursor: pointer;
+            height: 20px;
+            width: 20px;
+            margin: -15px 0 0 0;
+            font-weight: bold;
+        }
+        #closeCookieConsent:hover {
+            color: #FFF;
+        }
+        #cookieConsent a.cookieConsentOK {
+            background-color: #6b9ce8;
+            color: white;
+            display: inline-block;
+            border-radius: 5px;
+            padding: 0 20px;
+            cursor: pointer;
+            float: right;
+            margin: 0 60px 0 10px;
+        }
+        #cookieConsent a.cookieConsentOK:hover {
+            background-color: #6b9ce8;
+        }
+        /*Cookie Consent End*/
     </style>
 </head>
 
 <body>
 
 <!--====== PRELOADER PART START ======-->
+<div id="cookieConsent">
+    <div id="closeCookieConsent">x</div>
+    This website is using cookies. <a href="{{url('')}}" target="_blank">More info</a>. <a class="cookieConsentOK">That's Fine</a>
+</div>
 
 <div class="preloader" id="preloader">
     <div class="three ">
@@ -190,7 +266,11 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6">
-
+                    <div style="margin: 0 auto;max-width: 200px;margin-top: 180px">
+                        <a href="{{url('about')}}">About</a><br>
+                        <a href="{{url('user-agreement')}}">User Agreement</a><br>
+                        <a href="{{url('privacy-policy')}}">Privacy Policy</a>
+                    </div>
                 </div>
                 <div class="col-lg-4 col-md-4">
                     <div style="margin-top: 150px">
@@ -200,9 +280,12 @@
                         <p style="padding: 2px">
                             Tel: <a href="tel:{{env('APP_PHONE')}}">{{env('APP_PHONE')}}</a>
                         </p>
+                        <a target="_blank" href="https://www.facebook.com/CopyrightCover" class="fa fa-facebook facustom"></a>
+                        <a target="_blank" href="https://twitter.com/CoverCopyright" class="fa fa-twitter facustom"></a>
                     </div>
                 </div>
             </div>
+
             <div>
                 <p style="text-align: center;padding: 20px;padding-top: 0px">Copyright 2021 @CopyrightCover Ltd. All Rights
                     Reserved</p>
@@ -254,6 +337,16 @@
         attribute when modal is displayed again */
         $("#myModal").on('show.bs.modal', function(){
             $("#cartoonVideo").attr('src', url);
+        });
+
+        setTimeout(function () {
+            if(!localStorage.hasOwnProperty('cookiesConsent')){
+                $("#cookieConsent").fadeIn(200);
+            }
+        }, 4000);
+        $("#closeCookieConsent, .cookieConsentOK").click(function() {
+            localStorage.setItem('cookiesConsent', 1);
+            $("#cookieConsent").fadeOut(200);
         });
 
     });

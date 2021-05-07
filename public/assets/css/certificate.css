@@ -1,5 +1,10 @@
 /* New Certificate */
-
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Rock+Salt|Shadows+Into+Light|Cedarville+Cursive');
+@font-face {
+    font-family: 'MyWebFont';
+    src:  url('/assets/fonts/sign.otf') format('woff2'),
+    url('/assets/fonts/sign.otf') format('woff');
+}
 .pmw-certificate {
     border: 3px solid #d9d9d9;
     width: 100%;
@@ -11,14 +16,14 @@
     /*border: 1px solid #d9d9d9;*/
     /*border: 10px solid transparent;*/
     /*border-image: url('/assets/images/Border.png') 30 round;*/
-    border: 50px solid transparent;
-    border-image: url("/assets/images/Border.png") 150;
+    /*border: 50px solid transparent;*/
+    /*border-image: url("/assets/images/Border.png") 150;*/
     height: auto;
     margin: 5px;
-    /*background: url('/assets/images/Background.png') no-repeat;*/
+    background: url('/assets/images/Background.png') no-repeat;
     background-size: cover;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding: 40px;
+    /*padding-bottom: 40px;*/
 }
 
 .cert-logo {
@@ -36,40 +41,46 @@
 }
 
 .ct-title {
-    font-size: 22px;
+    font-size: 25px;
     text-transform: uppercase;
     text-align: center;
     display: block;
-    color: #646464;
+    color: #0000ff;
+    font-weight: bold;
     position: relative;
 }
 
-.ct-title:after {
-    content: "";
-    height: 1px;
-    width: 40%;
-    background: #d9d9d9;
-    position: absolute;
-    left: 0;
-    bottom: -12px;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
+/*.ct-title:after {*/
+/*    content: "";*/
+/*    height: 1px;*/
+/*    width: 40%;*/
+/*    background: #d9d9d9;*/
+/*    position: absolute;*/
+/*    left: 0;*/
+/*    bottom: -12px;*/
+/*    right: 0;*/
+/*    margin-left: auto;*/
+/*    margin-right: auto;*/
+/*}*/
+
+.middlesec{
+    background-image: url("/assets/images/Watermark.png");
+    z-index: 99999;
 }
 
 .ct-subtitle {
     display: block;
     text-align: center;
     margin-top: 30px;
-    color: #828282;
+    color: black;
     text-transform: uppercase;
     font-size: 16px;
 }
 
 .cd-line-title, .cd-line {
-    font-weight: bold;
-    font-size: 16px;
-    color: #828282;
+    /*font-weight: bold;*/
+    font-size: 20px;
+    color: black;
     text-transform: uppercase;
     width: 45%;
     display: inline-block;
@@ -98,12 +109,12 @@
 
 .cert-certified {
     text-align: center;
-    width: 50%;
-    float: right;
+    /*width: 50%;*/
+    /*float: right;*/
 }
 
 .cc-cc {
-    overflow: auto;
+    /*overflow: auto;*/
     margin-top: 30px;
     margin-bottom: 20px;
 }
@@ -127,28 +138,30 @@
 .certified-files {
     width: 90%;
     margin: 0 auto;
+    margin-top: 30px;
 }
 
 .cf-title {
     font-size: 22px;
     text-transform: uppercase;
     display: block;
-    color: #646464;
+    color: black;
+    /*font-weight: bold;*/
     position: relative;
 }
 
-.cf-title:after {
-    content: "";
-    height: 1px;
-    width: 40%;
-    background: #d9d9d9;
-    position: absolute;
-    left: 0;
-    bottom: -12px;
-}
+/*.cf-title:after {*/
+/*    content: "";*/
+/*    height: 1px;*/
+/*    width: 40%;*/
+/*    background: #d9d9d9;*/
+/*    position: absolute;*/
+/*    left: 0;*/
+/*    bottom: -12px;*/
+/*}*/
 
 .cf-items {
-    margin-top: 35px;
+    margin-top: 5px;
 }
 
 .cf-items a {
@@ -157,13 +170,14 @@
 }
 
 .cf-item {
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 
 .dnlwd {
     font-weight: bold;
     display: inline-block;
     margin-right: 15px;
+    color: #0000ff;
 }
 
 .copyright-footer {
