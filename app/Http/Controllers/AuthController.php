@@ -134,6 +134,9 @@ class AuthController extends Controller
             if (User::where('email', $request->email)->exists()) {
                 $user = User::where('email', $request->email)->first();
                 if ($user->password == md5($request->password)) {
+                    if ($user->active == 0){
+                        return redirect()->back()->withErrors(['You are blocked by admin. Please contact support@copyrightcover.com for further assistance.']);
+                    }
                     Session::put('userId', $user->id);
                     return redirect('dashboard');
                 } else {
@@ -161,6 +164,9 @@ class AuthController extends Controller
 
     public function sendmessage(Request $request){
         try {
+            $this->validate($request, [
+               'g-recaptcha-response' => 'required|captcha',
+            ]);
             $subject = new SendEmailService(new EmailSubject($request->name ." contacted you from " . env('APP_NAME')));
             $mailTo = new EmailAddress('me.aliriaz007@gmail.com');
             $invitationMessage = new ContactForm();

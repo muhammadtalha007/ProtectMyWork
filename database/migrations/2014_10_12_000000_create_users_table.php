@@ -27,6 +27,7 @@ class CreateUsersTable extends Migration
             $table->string('state');
             $table->string('telephone');
             $table->string('profession');
+            $table->string('active')->default(1);
             $table->timestamps();
         });
     }

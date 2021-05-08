@@ -1,6 +1,7 @@
 @extends('layouts.landing-app')
 @section('content')
 
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 
     <section class="faq-area mt-30" style="margin-top: 200px">
         <div class="container">
@@ -55,6 +56,12 @@
                                 <div class="input-box mt-30">
                                     <textarea type="text" class="form-control" placeholder="Message*" name="message" required></textarea>
                                 </div>
+                                <div class="input-box mt-30">
+                                    <div class="g-recaptcha"
+                                         data-sitekey="{{env('GOOGLE_RECAPTCHA_KEY')}}">
+                                    </div>
+                                </div>
+
                                 <div style="margin-top: 20px">
                                     <button type="submit" class="main-btn">
                                         SUBMIT
