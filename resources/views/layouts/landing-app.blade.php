@@ -206,15 +206,26 @@
                                            href="{{url('search-work')}}">SEARCH WORK </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link {{!\Request::is('/') ? 'blackcolorlink ' : ''}}{{\Request::is('faqs') ? 'activenavlink' : ''}}"
-                                           href="{{url('faqs')}}">FAQS </a>
-
+                                        <a class="nav-link {{!\Request::is('/') ? 'blackcolorlink ' : ''}} {{\Request::is('faqs') ? 'activenavlink' : ''}}{{\Request::is('reviews') ? 'activenavlink' : ''}}{{\Request::is('guides') ? 'activenavlink' : ''}}{{\Request::is('tips') ? 'activenavlink' : ''}}" href="#">YOUR BEST HUB </a>
+                                        <ul class="sub-menu">
+                                            <li><a href="{{url('faqs')}}">FAQS</a></li>
+                                            <li><a href="{{url('reviews')}}">Review</a></li>
+                                            <li><a href="{{url('guides')}}">GUIDES</a></li>
+                                            <li><a href="{{url('tips')}}">Quick Tips</a></li>
+{{--                                            <li>--}}
+{{--                                                <a href="#">Team <i class="fal fa-angle-right"></i></a>--}}
+{{--                                                <ul class="sub-menu">--}}
+{{--                                                    <li><a href="team-1.html">Team 1</a></li>--}}
+{{--                                                    <li><a href="team-2.html">Team 2</a></li>--}}
+{{--                                                </ul>--}}
+{{--                                            </li>--}}
+                                        </ul>
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link {{!\Request::is('/') ? 'blackcolorlink ' : ''}}{{\Request::is('reviews') ? 'activenavlink' : ''}}"
-                                           href="{{url('reviews')}}">REVIEWS </a>
+{{--                                    <li class="nav-item">--}}
+{{--                                        <a class="nav-link {{!\Request::is('/') ? 'blackcolorlink ' : ''}}{{\Request::is('reviews') ? 'activenavlink' : ''}}"--}}
+{{--                                           href="{{url('reviews')}}">REVIEWS </a>--}}
 
-                                    </li>
+{{--                                    </li>--}}
                                     <li class="nav-item">
                                         <a class="nav-link {{!\Request::is('/') ? 'blackcolorlink ' : ''}}{{\Request::is('contact') ? 'activenavlink' : ''}}"
                                            href="{{url('contact')}}">CONTACT</a>

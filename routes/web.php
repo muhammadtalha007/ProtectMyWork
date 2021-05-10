@@ -31,6 +31,12 @@ Route::get('/contact', function () {
 Route::get('/features', function () {
     return view('features');
 });
+Route::get('/guides', function () {
+    return view('guides');
+});
+Route::get('/tips', function () {
+    return view('tips');
+});
 Route::get('/register', function () {
     return view('auth.register');
 });

@@ -3,7 +3,71 @@
 @section('content')
 
     <link href="{{url('')}}/assets/css/works.css" rel="stylesheet">
-
+    <style>
+        .respmargintopbtn{
+            margin-top: -360px!important;
+        }
+        .resppaddding1{
+            padding: 50px;
+        }
+        .logomargin1{
+            margin-top: 90px
+        }
+        .logomargin2{
+            margin-left: 10px
+        }
+        .logosizeresp1{
+            height: 80px;width: 100px;
+        }
+        .logosizeresp2{
+            height: 80px;width: 80px;
+        }
+        .resppaddingiconsmain{
+            padding: 30px;
+        }
+        .servicemargin{
+            height: 380px;
+        }
+        @media screen and (max-width: 600px) {
+            .respmargintopbtn{
+                margin-top: -150px!important;
+            }
+            .resptopbtn1{
+                margin-left: -20px;
+            }
+            .resppaddding1{
+                padding: 0px;
+            }
+            .logomargin1{
+                margin-top: 150px
+            }
+            .logosizeresp1{
+                width: 80px;
+                height: 60px;
+            }
+            .respfontsizelogotext{
+                font-size: 14px;
+            }
+            .logosizeresp2{
+                height: 65px;width: 70px;
+            }
+            .logomargin2{
+                margin-left: 0px
+            }
+            .resppaddingiconsmain{
+                padding: 17px;
+            }
+            .servicemargin{
+                height: 470px;
+            }
+            .btnbottommarginleft{
+                margin-left: -64px;
+            }
+            .btnbottommarginlef2t{
+                margin-left: -50px;
+            }
+        }
+    </style>
     <section  style="padding-top: 200px;background-image: url('/assets/images/backgroundimage.png')">
 {{--        <div class="banner__bg"></div>--}}
         <div class="container">
@@ -32,8 +96,8 @@
 {{--                            <span></span>--}}
 {{--                        </a>--}}
                         <img src="{{url('')}}/assets/images/banner.png" style="margin-top: -20px">
-                        <div
-                            style="margin: 0 auto;max-width: 100px;margin-top: 10px;text-align: center;margin-top: -360px;padding-left: 10px">
+                        <div class="respmargintopbtn"
+                            style="margin: 0 auto;max-width: 100px;margin-top: 10px;text-align: center;;padding-left: 10px">
                             <a href="#myModal" data-toggle="modal" id="play-video" class="video-play-button"
                                title="Play Video">
                                 <span></span>
@@ -41,7 +105,7 @@
                         </div>
                     </div>
                     <div style="margin: 0 auto;max-width: 200px;margin-top: 300px;margin-bottom: 100px">
-                        <a class="main-btn" href="{{url('register')}}">COPYRIGHT YOUR WORK</a>
+                        <a class="main-btn resptopbtn1" href="{{url('register')}}">COPYRIGHT YOUR WORK</a>
                     </div>
 
 {{--                    <div class="banner-content">--}}
@@ -122,13 +186,13 @@
     <div class="container">
         <div style="margin: 0 auto;max-width: 1000px">
             <div class="row" style="height: 400px">
-                <div class="col-4" style="background: #9ec9ff;padding: 50px" >
+                <div class="col-4 resppaddding1" style="background: #9ec9ff;" >
                     <div style="margin: 0 auto;max-width: 100px;">
                         <div>
-                            <img src="{{url('')}}/icons/logo.png" style="height: 80px;width: 100px;margin-left: 10px;margin-top: 90px">
+                            <img class="logomargin1 logosizeresp1" src="{{url('')}}/icons/logo.png" style=";margin-left: 10px;">
                         </div>
                     </div>
-                    <h5 style="color: white;text-align: center;margin-top: 20px">LOGOS</h5>
+                    <h5 class="respfontsizelogotext" style="color: white;text-align: center;margin-top: 20px">LOGOS</h5>
 
                 </div>
                 <div style="background: blue" class="col-8">
@@ -139,54 +203,54 @@
                                     <img src="{{url('')}}/icons/education.png" style="height: 80px;width: 80px">
                                 </div>
                             </div>
-                            <h5 style="color: white;text-align: center;margin-top: 20px">EDUCATION & TRAINING</h5>
+                            <h5 class="respfontsizelogotext" style="color: white;text-align: center;margin-top: 20px">EDUCATION & TRAINING</h5>
 
                         </div>
                         <div style="background: #76a5f0;padding: 30px" class="col-6">
                             <div style="margin: 0 auto;width: 100px;">
                                 <div>
-                                    <img src="{{url('')}}/icons/artwork.png" style="height: 80px;width: 80px;margin-left: 10px">
+                                    <img class="logosizeresp2 logomargin2" src="{{url('')}}/icons/artwork.png">
                                 </div>
                             </div>
-                            <h5 style="color: white;text-align: center;margin-top: 20px">ARTWORK</h5>
+                            <h5 class="respfontsizelogotext" style="color: white;text-align: center;margin-top: 20px">ARTWORK</h5>
 
                         </div>
                         <div style="background: #9dbff2;padding: 30px" class="col-6">
                             <div style="margin: 0 auto;width: 100px;">
                                 <div>
-                                    <img src="{{url('')}}/icons/music.png" style="height: 80px;width: 80px">
+                                    <img  class="logosizeresp2" src="{{url('')}}/icons/music.png">
                                 </div>
                             </div>
-                            <h5 style="color: white;text-align: center;margin-top: 20px">MUSIC</h5>
+                            <h5 class="respfontsizelogotext" style="color: white;text-align: center;margin-top: 20px">MUSIC</h5>
 
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div style="background: #6597e6;padding: 30px" class="col-4">
+                <div style="background: #6597e6;" class="col-4 resppaddingiconsmain">
                     <div style="margin: 0 auto;width: 100px;">
                         <div>
-                            <img src="{{url('')}}/icons/drama.png" style="height: 80px;width: 80px">
+                            <img src="{{url('')}}/icons/drama.png"class="logosizeresp2">
                         </div>
                     </div>
-                    <h5 style="color: white;text-align: center;margin-top: 20px">DRAMATIC WORKS</h5>
+                    <h5 class="respfontsizelogotext" style="color: white;text-align: center;margin-top: 20px">DRAMATIC WORKS</h5>
                 </div>
-                <div style="background: #9ec9ff;padding: 30px" class="col-4">
+                <div style="background: #9ec9ff;" class="col-4 resppaddingiconsmain">
                     <div style="margin: 0 auto;width: 100px;">
                         <div>
-                            <img src="{{url('')}}/icons/book.png" style="height: 80px;width: 80px">
+                            <img src="{{url('')}}/icons/book.png" class="logosizeresp2">
                         </div>
                     </div>
-                    <h5 style="color: white;text-align: center;margin-top: 20px">LITERATURE</h5>
+                    <h5 class="respfontsizelogotext" style="color: white;text-align: center;margin-top: 20px">LITERATURE</h5>
                 </div>
-                <div style="background: #6597e6;padding: 30px" class="col-4">
+                <div style="background: #6597e6;" class="col-4 resppaddingiconsmain">
                     <div style="margin: 0 auto;width: 100px;">
                         <div>
-                            <img src="{{url('')}}/icons/software.png" style="height: 80px;width: 80px">
+                            <img src="{{url('')}}/icons/software.png" class="logosizeresp2">
                         </div>
                     </div>
-                    <h5 style="color: white;text-align: center;margin-top: 20px">SOFTWARE</h5>
+                    <h5 class="respfontsizelogotext" style="color: white;text-align: center;margin-top: 20px">SOFTWARE</h5>
                 </div>
             </div>
         </div>
@@ -222,7 +286,7 @@
     </div>
     <div class="container" style="max-width: 1100px;margin-top: -80px">
         <div class="row">
-            <div class="col-md-3" style="padding: 20px;background: white;box-shadow: 10px 10px 10px lightgrey;border-radius: 5px">
+            <div class="col-md-3" style=";margin-top:10px;padding: 20px;background: white;box-shadow: 10px 10px 10px lightgrey;border-radius: 5px">
                 <div style="margin: 0 auto;max-width: 120px">
                     <img src="{{url('')}}/icons/tick.png" style="height: 120px;width: 120px">
                 </div>
@@ -234,7 +298,7 @@
                 </p>
             </div>
             <div class="col-md-1"></div>
-            <div class="col-md-3" style="padding: 20px;background: white;box-shadow: 10px 10px 10px lightgrey;border-radius: 5px">
+            <div class="col-md-3" style=";margin-top:10px;padding: 20px;background: white;box-shadow: 10px 10px 10px lightgrey;border-radius: 5px">
                 <div style="margin: 0 auto;max-width: 120px">
                     <img src="{{url('')}}/icons/order.png" style="height: 120px;width: 120px">
                 </div>
@@ -249,7 +313,7 @@
             </div>
             <div class="col-md-1"></div>
 
-            <div class="col-md-3" style="padding: 20px;background: white;box-shadow: 10px 10px 10px lightgrey;border-radius: 5px">
+            <div class="col-md-3" style=";margin-top:10px;padding: 20px;background: white;box-shadow: 10px 10px 10px lightgrey;border-radius: 5px">
                 <div style="margin: 0 auto;max-width: 120px">
                     <img src="{{url('')}}/icons/email.png" style="height: 120px;width: 120px">
                 </div>
@@ -289,8 +353,8 @@
                 </div>
             </div> <!-- row -->
             <div class="row justify-content-center" style="margin-top: 80px">
-                <div class="col-lg-4 col-md-6 col-sm-9">
-                    <div class="sevices-item" style="height: 360px;border: 3px solid #9dbff2">
+                <div class="col-lg-4 col-md-6 col-sm-9" style="margin-top: 10px">
+                    <div class="sevices-item servicemargin" style=";border: 3px solid #9dbff2">
                         <div style="margin-top: -45px">
                             <div style="margin: 0 auto;max-width: 100px;background: #9dbff2;padding: 20px;border-radius: 10px;">
                                 <img src="{{url('')}}/icons/lock.png" style="width: 80px;height: 50px">
@@ -306,8 +370,8 @@
 
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-9">
-                    <div class="sevices-item" style="height: 360px;border: 3px solid #9dbff2">
+                <div class="col-lg-4 col-md-6 col-sm-9"  style="margin-top: 10px">
+                    <div class="sevices-item servicemargin" style=";border: 3px solid #9dbff2">
                         <div style="margin-top: -45px">
                             <div style="margin: 0 auto;max-width: 100px;background: #9dbff2;padding: 20px;border-radius: 10px;">
                                 <img src="{{url('')}}/icons/laptop.png" style="width: 80px;height: 50px">
@@ -328,8 +392,8 @@
                 </div>
 
 
-                <div class="col-lg-4 col-md-6 col-sm-9">
-                    <div class="sevices-item" style="height: 360px;border: 3px solid #9dbff2">
+                <div class="col-lg-4 col-md-6 col-sm-9"  style="margin-top: 10px">
+                    <div class="sevices-item servicemargin" style=";border: 3px solid #9dbff2">
                         <div style="margin-top: -45px">
                             <div style="margin: 0 auto;max-width: 100px;background: #9dbff2;padding: 20px;border-radius: 10px;">
                                 <img src="{{url('')}}/icons/case.png" style="width: 80px;height: 50px">
@@ -355,8 +419,8 @@
 
             </div>
             <div class="row justify-content-center" style="margin-top: 70px">
-                <div class="col-lg-4 col-md-6 col-sm-9">
-                    <div class="sevices-item" style="height: 360px;border: 3px solid #9dbff2">
+                <div class="col-lg-4 col-md-6 col-sm-9"   style="margin-top: 10px">
+                    <div class="sevices-item servicemargin" style=";border: 3px solid #9dbff2">
                         <div style="margin-top: -45px">
                             <div style="margin: 0 auto;max-width: 100px;background: #9dbff2;padding: 20px;border-radius: 10px;">
                                 <img src="{{url('')}}/icons/star.png" style="width: 80px;height: 50px">
@@ -376,8 +440,8 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 col-sm-9">
-                    <div class="sevices-item" style="height: 360px;border: 3px solid #9dbff2">
+                <div class="col-lg-4 col-md-6 col-sm-9"  style="margin-top: 10px">
+                    <div class="sevices-item servicemargin" style=";border: 3px solid #9dbff2">
                         <div style="margin-top: -45px">
                             <div style="margin: 0 auto;max-width: 100px;background: #9dbff2;padding: 20px;border-radius: 10px;">
                                 <img src="{{url('')}}/icons/c.png" style="width: 80px;height: 50px">
@@ -398,8 +462,8 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 col-sm-9">
-                    <div class="sevices-item" style="height: 360px;border: 3px solid #9dbff2">
+                <div class="col-lg-4 col-md-6 col-sm-9"  style="margin-top: 10px">
+                    <div class="sevices-item servicemargin" style="border: 3px solid #9dbff2">
                         <div style="margin-top: -45px">
                             <div style="margin: 0 auto;max-width: 100px;background: #9dbff2;padding: 20px;border-radius: 10px;">
                                 <img src="{{url('')}}/icons/shield.png" style="width: 80px;height: 50px">
@@ -494,7 +558,7 @@
                 </div>
             </div>
             <div style="margin: 0 auto;max-width: 200px;margin-top: 100px;margin-bottom: 100px">
-                <a class="main-btn" style="background: #9dbff2;color: white" href="{{url('register')}}">COPYRIGHT YOUR WORK NOW</a>
+                <a class="main-btn btnbottommarginleft" style="background: #9dbff2;color: white" href="{{url('register')}}">COPYRIGHT YOUR WORK NOW</a>
             </div>
         </div>
 
@@ -506,7 +570,7 @@
                 with 30 day money back guarantee included.
             </h5>
             <div style="margin: 0 auto;max-width: 200px;margin-top: 50px;margin-bottom: 100px">
-                <a class="main-btn" style="background: white;color: #9dbff2" href="{{url('register')}}">COPYRIGHT YOUR WORK</a>
+                <a class="main-btn btnbottommarginlef2t" style="background: white;color: #9dbff2" href="{{url('register')}}">COPYRIGHT YOUR WORK</a>
             </div>
         </div>
 
