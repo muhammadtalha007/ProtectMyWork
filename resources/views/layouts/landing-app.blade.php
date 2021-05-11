@@ -64,6 +64,7 @@
 
     <!--====== Main js ======-->
     <script src="{{url('')}}/assets/js/main.js"></script>
+    <script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
     <style>
         .blackcolorlink {
             color: black !important;
@@ -321,6 +322,9 @@
         </div>
     </div>
 </div>
+
+<div class="trustedsite-trustmark" data-type="202" data-width="120"  data-height="50"></div>
+
 
 <!--====== FOOTER PART ENDS ======-->
 

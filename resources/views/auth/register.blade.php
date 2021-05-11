@@ -1,7 +1,6 @@
 @extends('layouts.landing-app')
 <!--====== LOGIN PART START ======-->
 @section('content')
-    <script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
     <section class="login-area singup-area" style="margin-bottom: 100px">
 {{--        <div class="login-bg">--}}
 {{--            <div class="login-shape">--}}
@@ -227,7 +226,6 @@
                     <div class="col-lg-12">
                         <div class="login-title" style="padding-top: 20px!important;">
                             <p style="color: #6b9ce8;font-weight: bold;font-size: 23px!important;">PAYMENT OPTIONS</p>
-                            <div class="trustedsite-trustmark" data-type="202" data-width="120"  data-height="50"></div>
 
                         </div>
                     </div>
