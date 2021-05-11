@@ -1,6 +1,7 @@
 @extends('layouts.landing-app')
 <!--====== LOGIN PART START ======-->
 @section('content')
+    <script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
     <section class="login-area singup-area" style="margin-bottom: 100px">
 {{--        <div class="login-bg">--}}
 {{--            <div class="login-shape">--}}
@@ -226,6 +227,8 @@
                     <div class="col-lg-12">
                         <div class="login-title" style="padding-top: 20px!important;">
                             <p style="color: #6b9ce8;font-weight: bold;font-size: 23px!important;">PAYMENT OPTIONS</p>
+                            <div class="trustedsite-trustmark" data-type="202" data-width="120"  data-height="50"></div>
+
                         </div>
                     </div>
 
@@ -332,10 +335,15 @@
 
                     </div>
                 </div>
+
+
+
             </div>
+
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3 mt-30">
+
                         <button id="submitbtnmain" type="submit"
                                 style="background: #6b9ce8;letter-spacing: 3px;border: none;color: #fff;cursor: pointer;padding: 1.0rem 3rem;text-transform: uppercase;width: 100%;border-radius: 5px;line-height: 18px;font-size: 15px !important;">
                             SUBMIT
@@ -345,6 +353,7 @@
             </div>
         </form>
     </section>
+
     <script>
         $(document).ready(function () {
             let num;
