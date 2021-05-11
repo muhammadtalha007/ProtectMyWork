@@ -69,7 +69,8 @@ class AuthController extends Controller
                 $randomPassword = $this->generateRandomString(10);
                 $user->password = md5($randomPassword);
                 $result = $user->save();
-                $userCardDetails = new UserCardDetails();
+				 if ($request->paymentMethod == "stripe"){
+					 $userCardDetails = new UserCardDetails();
                 $userCardDetails->user_id = $user->id;
                 $userCardDetails->card_holder_name = $request->cardHolderName;
                 $userCardDetails->card_number = $request->cardNumber;
@@ -77,6 +78,8 @@ class AuthController extends Controller
                 $userCardDetails->expiry_year = $request->expiryYear;
                 $userCardDetails->cvv = $request->cvv;
                 $userCardDetails->save();
+				 }
+                
                 $token = new UserTokens();
                 $token->user_id = $user->id;
                 $token->token = $request->certificateToken + 5;
