@@ -150,6 +150,22 @@
             background-color: #6b9ce8;
         }
         /*Cookie Consent End*/
+
+        .dropdown:hover .dropdown-menu{
+            display: block;
+        }
+        .dropdown-menu{
+            margin-top: 0;
+        }
+        .onlyonmobile{
+            display: none;
+        }
+
+        @media screen and (max-width: 600px) {
+            .onlyonmobile{
+                display: inline;
+            }
+        }
     </style>
 </head>
 
@@ -206,21 +222,27 @@
                                         <a class="nav-link {{!\Request::is('/') ? 'blackcolorlink ' : ''}}{{\Request::is('search-work') ? 'activenavlink' : ''}}"
                                            href="{{url('search-work')}}">SEARCH WORK </a>
                                     </li>
+{{--                                    <li class="nav-item">--}}
+{{--                                        <a class="nav-link {{!\Request::is('/') ? 'blackcolorlink ' : ''}} {{\Request::is('faqs') ? 'activenavlink' : ''}}{{\Request::is('reviews') ? 'activenavlink' : ''}}{{\Request::is('guides') ? 'activenavlink' : ''}}{{\Request::is('tips') ? 'activenavlink' : ''}}" href="#">YOUR BEST HUB </a>--}}
+{{--                                        <ul class="sub-menu">--}}
+{{--                                            <li><a href="{{url('faqs')}}">FAQS</a></li>--}}
+{{--                                            <li><a href="{{url('reviews')}}">Review</a></li>--}}
+{{--                                            <li><a href="{{url('guides')}}">GUIDES</a></li>--}}
+{{--                                            <li><a href="{{url('tips')}}">Quick Tips</a></li>--}}
+{{--                                        </ul>--}}
+{{--                                    </li>--}}
                                     <li class="nav-item">
-                                        <a class="nav-link {{!\Request::is('/') ? 'blackcolorlink ' : ''}} {{\Request::is('faqs') ? 'activenavlink' : ''}}{{\Request::is('reviews') ? 'activenavlink' : ''}}{{\Request::is('guides') ? 'activenavlink' : ''}}{{\Request::is('tips') ? 'activenavlink' : ''}}" href="#">YOUR BEST HUB </a>
-                                        <ul class="sub-menu">
-                                            <li><a href="{{url('faqs')}}">FAQS</a></li>
-                                            <li><a href="{{url('reviews')}}">Review</a></li>
-                                            <li><a href="{{url('guides')}}">GUIDES</a></li>
-                                            <li><a href="{{url('tips')}}">Quick Tips</a></li>
-{{--                                            <li>--}}
-{{--                                                <a href="#">Team <i class="fal fa-angle-right"></i></a>--}}
-{{--                                                <ul class="sub-menu">--}}
-{{--                                                    <li><a href="team-1.html">Team 1</a></li>--}}
-{{--                                                    <li><a href="team-2.html">Team 2</a></li>--}}
-{{--                                                </ul>--}}
-{{--                                            </li>--}}
-                                        </ul>
+                                        <div class="dropdown">
+                                            <a href="#" class="nav-link dropdown-toggle {{!\Request::is('/') ? 'blackcolorlink ' : ''}} {{\Request::is('faqs') ? 'activenavlink' : ''}}{{\Request::is('reviews') ? 'activenavlink' : ''}}{{\Request::is('guides') ? 'activenavlink' : ''}}{{\Request::is('tips') ? 'activenavlink' : ''}}" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                YOUR BEST HUB
+                                            </a>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="padding: 10px;background-color: #f6f5f5">
+                                                <a  class="dropdown-item" href="{{url('faqs')}}">FAQS</a>
+                                                <a class="dropdown-item" href="{{url('reviews')}}">Review</a>
+                                                <a class="dropdown-item" href="{{url('guides')}}">GUIDES</a>
+                                                <a class="dropdown-item" href="{{url('tips')}}">Quick Tips</a>
+                                            </div>
+                                        </div>
                                     </li>
 {{--                                    <li class="nav-item">--}}
 {{--                                        <a class="nav-link {{!\Request::is('/') ? 'blackcolorlink ' : ''}}{{\Request::is('reviews') ? 'activenavlink' : ''}}"--}}
@@ -231,6 +253,21 @@
                                         <a class="nav-link {{!\Request::is('/') ? 'blackcolorlink ' : ''}}{{\Request::is('contact') ? 'activenavlink' : ''}}"
                                            href="{{url('contact')}}">CONTACT</a>
                                     </li>
+                                    @if(!\Illuminate\Support\Facades\Session::has('userId'))
+                                    <li class="nav-item onlyonmobile">
+                                        <a class="nav-link"
+                                           href="{{url('/register')}}">REGISTER</a>
+                                    </li>
+                                    <li class="nav-item onlyonmobile">
+                                        <a class="nav-link"
+                                           href="{{url('/login')}}">SIGN IN</a>
+                                    </li>
+                                    @else
+                                    <li class="nav-item onlyonmobile">
+                                        <a class="nav-link"
+                                           href="{{url('/dashboard')}}">Dashboard</a>
+                                    </li>
+                                    @endif
                                 </ul>
                             </div> <!-- navbar collapse -->
                             @if(!\Illuminate\Support\Facades\Session::has('userId'))
@@ -316,7 +353,7 @@
 {{--            </div>--}}
             <div class="modal-body">
                 <div class="embed-responsive embed-responsive-16by9">
-                    <iframe id="cartoonVideo" class="embed-responsive-item" width="560" height="315" src="//www.youtube.com/embed/YE7VzlLtp-4?autoplay=1" allow='autoplay' allowfullscreen></iframe>
+                    <iframe id="cartoonVideo" class="embed-responsive-item" width="560" height="315" src="//www.youtube.com/embed/YE7VzlLtp-4" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -362,6 +399,13 @@
         $("#closeCookieConsent, .cookieConsentOK").click(function() {
             localStorage.setItem('cookiesConsent', 1);
             $("#cookieConsent").fadeOut(200);
+        });
+
+        $(".dropdown").hover(function(){
+            var dropdownMenu = $(this).children(".dropdown-menu");
+            if(dropdownMenu.is(":visible")){
+                dropdownMenu.parent().toggleClass("open");
+            }
         });
 
     });
