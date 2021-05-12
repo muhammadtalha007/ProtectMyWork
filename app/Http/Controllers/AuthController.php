@@ -79,7 +79,7 @@ class AuthController extends Controller
                 $userCardDetails->cvv = $request->cvv;
                 $userCardDetails->save();
 				 }
-                
+
                 $token = new UserTokens();
                 $token->user_id = $user->id;
                 $token->token = $request->certificateToken + 5;
@@ -167,9 +167,6 @@ class AuthController extends Controller
 
     public function sendmessage(Request $request){
         try {
-            $this->validate($request, [
-               'g-recaptcha-response' => 'required|captcha',
-            ]);
             $subject = new SendEmailService(new EmailSubject($request->name ." contacted you from " . env('APP_NAME')));
             $mailTo = new EmailAddress('me.aliriaz007@gmail.com');
             $invitationMessage = new ContactForm();

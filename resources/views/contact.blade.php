@@ -24,7 +24,7 @@
 
 
             </p>
-            <form method="post" action="{{url("/sendmessage")}}">
+            <form method="post" action="{{url("/sendmessage")}}" onsubmit="return validateForm()">
                 {{csrf_field()}}
                 <div class="container">
                     <div class="row" style="padding-top: 50px">
@@ -93,6 +93,22 @@
         </div>
     </section>
 
+    <script>
+        function validateForm()
+        {
+            var v = grecaptcha.getResponse();
+            if(v.length === 0)
+            {
+                document.getElementById('captcha').innerHTML="You can't leave Captcha Code empty";
+                return false;
+            }
+            else
+            {
+                document.getElementById('captcha').innerHTML="Captcha completed";
+                return true;
+            }
+        }
+    </script>
 
 
 @endsection
