@@ -65,7 +65,7 @@ class DashboardController extends Controller
 
     public function addMoreTokens(){
         $userCard = UserCardDetails::where('user_id', Session::get('userId'))->first();
-        return view('dashboard.add-more-tokens')->with(['cardNumber' => $userCard->card_number, 'month' => $userCard->expiry_month, 'year' => $userCard->expiry_year]);
+        return view('dashboard.add-more-tokens')->with(['cardNumber' => $userCard->card_number ?? '', 'month' => $userCard->expiry_month ?? '', 'year' => $userCard->expiry_year ?? '']);
     }
 
     public function saveNewToken(Request $request){
