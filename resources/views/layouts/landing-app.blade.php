@@ -11,6 +11,8 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+
+
     <!--====== Title ======-->
     <title>{{env('APP_NAME')}}</title>
 
@@ -167,9 +169,40 @@
             }
         }
     </style>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MC64HVX');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '304564604563489');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+                   src="https://www.facebook.com/tr?id=304564604563489&ev=PageView&noscript=1"
+        /></noscript>
+    <!-- End Facebook Pixel Code -->
+
 </head>
 
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MC64HVX"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <!--====== PRELOADER PART START ======-->
 <div id="cookieConsent">
@@ -322,10 +355,10 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4">
-                    <div style="margin-top: 150px">
-                        <p style="padding: 2px">
-                            Email: <a href="mailto:{{env('APP_EMAIL')}}">{{env('APP_EMAIL')}}</a>
-                        </p>
+                    <div style="margin-top: 180px">
+{{--                        <p style="padding: 2px">--}}
+{{--                            Email: <a href="mailto:{{env('APP_EMAIL')}}">{{env('APP_EMAIL')}}</a>--}}
+{{--                        </p>--}}
                         <p style="padding: 2px">
                             Tel: <a href="tel:{{env('APP_PHONE')}}">{{env('APP_PHONE')}}</a>
                         </p>

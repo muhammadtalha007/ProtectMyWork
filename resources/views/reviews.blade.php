@@ -23,8 +23,7 @@
                         <img src="{{url('')}}/assets/images/testimonial-1.jpg" alt="">
                         <h3 class="title">Adam Smith</h3>
                         <span>Wp Developer</span>
-                        <p>The beauty of astronomy is that anybody can do it. tiniest baby to the most advanced there is
-                            some for anyone who to the most at in same things of joy wants to enjoy astronomy. </p>
+                        <p>Quick and easy service. All my codes are secured from copyright infringment. Highly rated! </p>
                         <div class="icon">
                             <img src="{{url('')}}/assets/images/shape.svg" alt="">
                         </div>
@@ -33,10 +32,9 @@
                 <div class="col-lg-4 col-md-6 col-sm-9">
                     <div class="testimonial-item item-2 mt-30">
                         <img src="{{url('')}}/assets/images/testimonial-2.jpg" alt="">
-                        <h3 class="title">Jonathan Ven</h3>
-                        <span>Ui/Ux Designer</span>
-                        <p>The beauty of astronomy is that anybody can do it. tiniest baby to the most advanced there is
-                            some for anyone who to the most at in same things of joy wants to enjoy astronomy. </p>
+                        <h3 class="title">Maria Ven</h3>
+                        <span>writer</span>
+                        <p>As a writer i tend to have different ideas and keep writing original contents. Protecting my work with copyright cover gives me ultimate assurance that my hard work is getting looked after.</p>
                         <div class="icon">
                             <img src="{{url('')}}/assets/images/shape.svg" alt="">
                         </div>
@@ -47,8 +45,7 @@
                         <img src="{{url('')}}/assets/images/testimonial-3.jpg" alt="">
                         <h3 class="title">Desel Mulate</h3>
                         <span>Digital Marketer</span>
-                        <p>The beauty of astronomy is that anybody can do it. tiniest baby to the most advanced there is
-                            some for anyone who to the most at in same things of joy wants to enjoy astronomy. </p>
+                        <p>Highly pleased with the website ease of use. As i run multiple websites. I have used this service on all my websites to deter content thieves. </p>
                         <div class="icon">
                             <img src="{{url('')}}/assets/images/shape.svg" alt="">
                         </div>

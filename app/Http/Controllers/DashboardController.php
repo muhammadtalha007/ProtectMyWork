@@ -280,6 +280,15 @@ class DashboardController extends Controller
         return readfile($file);
     }
 
+    public function testingMail(){
+        $message = new WorkProtected();
+        $userId = Session::get('userId');
+        $currentUser = User::where('id', $userId)->first();
+        $certificates = Certificates::where('user_id', $userId)->first();
+        $emailBody = $message->message($currentUser , $certificates, 'sdsdvsdv');
+        return $emailBody;
+    }
+
     public function savingNewWork(Request $request)
     {
         try {

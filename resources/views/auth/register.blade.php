@@ -8,7 +8,7 @@
 {{--            </div>--}}
 {{--        </div>--}}
 
-        <form method="post" action="{{url("/register-user")}}">
+        <form method="post" action="{{url("/register-user")}}" onsubmit="return validateForm()">
             {{csrf_field()}}
             <div class="container">
                 <div class="row login-title">
@@ -36,13 +36,13 @@
                         </div>
                         <div class="login-form">
                             <div class="input-box mt-30">
-                                <input type="text" placeholder="First Name*" name="firstName" required>
+                                <input type="text" placeholder="First Name*" name="firstName" id="firstname">
                             </div>
                             <div class="input-box mt-30">
-                                <input type="text" placeholder="Last Name*" name="lastName" required>
+                                <input type="text" placeholder="Last Name*" name="lastName" id="lastname">
                             </div>
                             <div class="input-box mt-30">
-                                <input type="email" placeholder="Email Address*" name="emailAddress" required>
+                                <input type="email" placeholder="Email Address*" name="emailAddress" id="emailAddress">
                             </div>
                             <div class="input-box mt-30">
                                 <input type="text" placeholder="Company Name" name="companyName">
@@ -65,23 +65,23 @@
                         </div>
                         <div class="login-form">
                             <div class="input-box mt-30">
-                                <input type="text" placeholder="Address Line One*" name="addressLineOne" id="addressLineOne" required>
+                                <input type="text" placeholder="Address Line One*" name="addressLineOne" id="addressLineOne">
                             </div>
                             <div class="input-box mt-30">
-                                <input type="text" placeholder="City*" name="city" id="city" required>
+                                <input type="text" placeholder="City*" name="city" id="city" >
                             </div>
                             <div class="input-box mt-30">
-                                <input type="text" placeholder="Postal Code*" id="zipcode" name="postalCode" required>
+                                <input type="text" placeholder="Postal Code*" id="zipcode" name="postalCode">
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="login-form">
                             <div class="input-box mt-100">
-                                <input type="text" placeholder="Address Line Two" name="addressLineTwo">
+                                <input type="text" placeholder="Address Line Two" name="addressLineTwo" >
                             </div>
                             <div class="input-box mt-30">
-                                <input type="text" placeholder="Country/Province*" name="country" id="state" required>
+                                <input type="text" placeholder="Country/Province*" name="country" id="state">
                             </div>
                             <div class="input-box mt-30">
                                 <select id="selectCountry" name="selectCountry"
@@ -102,14 +102,14 @@
                         </div>
                         <div class="login-form">
                             <div class="input-box mt-30">
-                                <input type="text" placeholder="Telephone*" name="telephone" required>
+                                <input type="text" placeholder="Telephone*" name="telephone" id="telephone">
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="login-form">
                             <div class="input-box" style="margin-top: 98px!important;">
-                                <select name="profession" required
+                                <select name="profession" id="profession"
                                         style="width: 100%;border: solid 2px rgba(102, 102, 102, 0.12);border-radius: 5px;height: 45px;padding-left: 30px;background-color: white;">
                                     <option value="">Please Choose Profession</option>
                                     <option value="Accountancy">Accountancy</option>
@@ -339,6 +339,10 @@
             </div>
 
             <div class="container">
+
+                <div style="color: white;padding: 10px;display: none;margin-top: 20px;background-color: maroon" id="errorMessageDiv">
+
+                </div>
                 <div class="row">
                     <div class="col-lg-3 mt-30">
 
@@ -353,6 +357,71 @@
     </section>
 
     <script>
+        function validateForm()
+        {
+            let firstname = document.getElementById('firstname').value;
+            let lastname = document.getElementById('lastname').value;
+            let emailAddress = document.getElementById('emailAddress').value;
+            let addressLineOne = document.getElementById('addressLineOne').value;
+            let city = document.getElementById('city').value;
+            let zipcode = document.getElementById('zipcode').value;
+            let state = document.getElementById('state').value;
+            let selectCountry = document.getElementById('selectCountry').value;
+            let telephone = document.getElementById('telephone').value;
+            let profession = document.getElementById('profession').value;
+            document.getElementById('errorMessageDiv').style.display = 'none';
+            if (firstname === undefined || firstname === ''){
+                document.getElementById('errorMessageDiv').innerHTML = 'First Name is required';
+                document.getElementById('errorMessageDiv').style.display = 'block';
+                return false;
+            }
+            if (lastname === undefined || lastname === ''){
+                document.getElementById('errorMessageDiv').innerHTML = 'Last Name is required';
+                document.getElementById('errorMessageDiv').style.display = 'block';
+                return false;
+            }
+            if (emailAddress === undefined || emailAddress === ''){
+                document.getElementById('errorMessageDiv').innerHTML = 'Email Address is required';
+                document.getElementById('errorMessageDiv').style.display = 'block';
+                return false;
+            }
+            if (addressLineOne === undefined || addressLineOne === ''){
+                document.getElementById('errorMessageDiv').innerHTML = 'Address is required';
+                document.getElementById('errorMessageDiv').style.display = 'block';
+                return false;
+            }
+            if (city === undefined || city === ''){
+                document.getElementById('errorMessageDiv').innerHTML = 'City is required';
+                document.getElementById('errorMessageDiv').style.display = 'block';
+                return false;
+            }
+            if (zipcode === undefined || zipcode === ''){
+                document.getElementById('errorMessageDiv').innerHTML = 'Zipcode is required';
+                document.getElementById('errorMessageDiv').style.display = 'block';
+                return false;
+            }
+            if (state === undefined || state === ''){
+                document.getElementById('errorMessageDiv').innerHTML = 'State is required';
+                document.getElementById('errorMessageDiv').style.display = 'block';
+                return false;
+            }
+            if (selectCountry === undefined || selectCountry === ''){
+                document.getElementById('errorMessageDiv').innerHTML = 'Country is required';
+                document.getElementById('errorMessageDiv').style.display = 'block';
+                return false;
+            }
+            if (telephone === undefined || telephone === ''){
+                document.getElementById('errorMessageDiv').innerHTML = 'Telephone is required';
+                document.getElementById('errorMessageDiv').style.display = 'block';
+                return false;
+            }
+            if (profession === undefined || profession === ''){
+                document.getElementById('errorMessageDiv').innerHTML = 'Profession is required';
+                document.getElementById('errorMessageDiv').style.display = 'block';
+                return false;
+            }
+            return true;
+        }
         $(document).ready(function () {
             let num;
             let num2;
