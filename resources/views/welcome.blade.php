@@ -1,3 +1,35 @@
+<link rel="canonical" href="https://www.copyrightcover.com/"><!DOCTYPE html>
+<!-- COMMON TAGS -->
+<meta charset="utf-8">
+<title>Copyright Cover</title>
+<!-- Search Engine -->
+<meta name="description" content="Copyright Cover UK and International copyright registration service for £19.99">
+<meta name="image" content="https://www.copyrightcover.com/assets/images/logo.png">
+<meta name="keywords" content="how to copyright, copyright protection, copyright Cover,UK Copyright Service, registration, copyright office, IP registration centre, original, protection, musicians, artists, designers, software developers, authors, intellectual property, TV, film, photography" />
+<meta name="ROBOTS" content="NOYDIR" />
+<meta name="ROBOTS" content="NOODP" />
+<!-- Schema.org for Google -->
+<meta itemprop="name" content="Copyright Cover">
+<meta itemprop="description" content="Copyright Cover is a swift and secure copyright protection service for £19.99">
+<meta itemprop="image" content="https://www.copyrightcover.com/assets/images/logo.png">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Copyright Cover">
+<meta name="twitter:description" content="Copyright Cover is a swift and secure copyright protection service for £19.99">
+<meta name="twitter:site" content="@CoverCopyright">
+<meta name="twitter:creator" content="@CoverCopyright">
+<meta name="twitter:image:src" content="https://www.copyrightcover.com/assets/images/logo.png">
+<!-- Open Graph general (Facebook, Pinterest & Google+) -->
+<meta property="og:title" content="Copyright Cover">
+<meta property="og:description" content="Copyright Cover is a swift and secure copyright protection service for £19.99">
+<meta property="og:image" content="https://www.copyrightcover.com/assets/images/banner.png">
+<meta property="og:locale" content="England">
+<meta property="og:video" content="https://www.youtube.com/watch?v=X5FZgj0p814">
+<meta property="fb:admins" content="100011001514131">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.copyrightcover.com/">
+
+
 @extends('layouts.landing-app')
 <!--====== BANNER PART START ======-->
 @section('content')
@@ -487,9 +519,14 @@
             </div>
         </div>
     </section>
+     <div class="trustedsite-trustmark" data-type="1001"></div>
     <div style="padding: 80px">
         <div style="margin: 0 auto;max-width: 1000px">
             <h3 style="text-align: center;margin-top: 30px;">OUR SIMPLE PROCESS</h3>
+            <div style="margin: 0 auto;max-width: 1000px">
+                        <p style="text-align: center">
+                            For £19.99 per year Copyright upto 5 Creative Works,
+                with 30 day money back guarantee included.
             <div style="margin: 0 auto;max-width: 100px">
                 <div style="border-bottom: 3px solid #6b9ce8;width: 100px" >
 
@@ -556,21 +593,22 @@
                         </div>
                     </div>
                 </div>
-            </div>
+                   
+
             <div style="margin: 0 auto;max-width: 200px;margin-top: 100px;margin-bottom: 100px">
+              
                 <a class="main-btn btnbottommarginleft" style="background: #9dbff2;color: white" href="{{url('register')}}">COPYRIGHT YOUR WORK NOW</a>
+                
+        
             </div>
         </div>
 
     </div>
     <div style="background: #9dbff2;padding: 80px">
         <div style="margin: 0 auto;max-width: 800px">
-            <h5 style="text-align: center;color: white">
-                With £19.99 per year Copyright your work today and receive 5 free certificate tokens,
-                with 30 day money back guarantee included.
-            </h5>
+       </h5>
             <div style="margin: 0 auto;max-width: 200px;margin-top: 50px;margin-bottom: 100px">
-                <a class="main-btn btnbottommarginlef2t" style="background: white;color: #9dbff2" href="{{url('register')}}">COPYRIGHT YOUR WORK</a>
+             
             </div>
         </div>
 

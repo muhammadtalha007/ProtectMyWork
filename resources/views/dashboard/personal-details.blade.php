@@ -35,27 +35,27 @@
                             </div>
                             <div class="input-box mt-30" style="margin-top: 10px">
                                 <label>Address:</label><br>
-                                <input type="text" value="{{$user->address}}" placeholder="Address*" name="address" required>
+                                <input type="text" value="{{$user->address}}" placeholder="Address*" name="address">
                             </div>
                             <div class="input-box mt-30" style="margin-top: 10px">
                                 <label>City:</label><br>
-                                <input type="text" value="{{$user->city}}" placeholder="City*" name="city" required>
+                                <input type="text" value="{{$user->city}}" placeholder="City*" name="city">
                             </div>
                             <div class="input-box mt-30" style="margin-top: 10px">
                                 <label>Province:</label><br>
-                                <input type="text" value="{{$user->state}}" placeholder="Province*" name="province" required>
+                                <input type="text" value="{{$user->state}}" placeholder="Province*" name="province">
                             </div>
                             <div class="input-box mt-30" style="margin-top: 10px">
                                 <label>Postal Code:</label><br>
-                                <input type="text" value="{{$user->postal_code}}" placeholder="Postal Code*" name="postalCode" required>
+                                <input type="text" value="{{$user->postal_code}}" placeholder="Postal Code*" name="postalCode">
                             </div>
                             <div class="input-box mt-30" style="margin-top: 10px">
                                 <label>Telephone:</label><br>
-                                <input type="text" value="{{$user->telephone}}" placeholder="Telephone*" name="telephone" required>
+                                <input type="text" value="{{$user->telephone}}" placeholder="Telephone*" name="telephone">
                             </div>
                             <div class="input-box mt-30" style="margin-top: 10px">
                                 <label>Profession:</label><br>
-                                <select name="profession" required
+                                <select name="profession"
                                         style="width: 100%;border: solid 2px rgba(102, 102, 102, 0.12);border-radius: 5px;height: 45px;padding-left: 30px;background-color: white;">
                                     <option value="">Please Choose Profession</option>
                                     <option value="Accountancy" {{$user->profession == 'Accountancy' ? 'selected' : ''}}>Accountancy</option>

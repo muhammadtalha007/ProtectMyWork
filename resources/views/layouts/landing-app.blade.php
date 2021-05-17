@@ -162,10 +162,45 @@
         .onlyonmobile{
             display: none;
         }
+        .ftlinksresp{
+            margin-top: 140px!important;
+            max-width: 180px;
+        }
+
+        .ftlinksresp2{
+            margin-top: 120px;
+        }
+
+        .ftlinksresp3{
+            padding: 2px;
+        }
 
         @media screen and (max-width: 600px) {
             .onlyonmobile{
                 display: inline;
+            }
+            .ftlinksresp{
+                margin-top: 10px!important;
+                max-width: 389px;
+            }
+            .ftlinksresp2{
+                margin-top: 10px;
+            }
+            .ftlinksresp3{
+                padding: 2px;
+               padding-left: 53px;
+            }
+            .mgleft5{
+                margin-left: 50px;
+            }
+            .mgtop5{
+                margin-top: 30px;
+            }
+        }
+        @media screen and (max-width: 450px) {
+            .ftlinksresp{
+                margin-top: 10px!important;
+                max-width: 200px;
             }
         }
     </style>
@@ -271,9 +306,9 @@
                                             </a>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="padding: 10px;background-color: #f6f5f5">
                                                 <a  class="dropdown-item" href="{{url('faqs')}}">FAQS</a>
-                                                <a class="dropdown-item" href="{{url('reviews')}}">Review</a>
+                                                <a class="dropdown-item" href="{{url('reviews')}}">REVIEWS</a>
                                                 <a class="dropdown-item" href="{{url('guides')}}">GUIDES</a>
-                                                <a class="dropdown-item" href="{{url('tips')}}">Quick Tips</a>
+                                                <a class="dropdown-item" href="{{url('tips')}}">QUICK TIPS</a>
                                             </div>
                                         </div>
                                     </li>
@@ -284,7 +319,7 @@
 {{--                                    </li>--}}
                                     <li class="nav-item">
                                         <a class="nav-link {{!\Request::is('/') ? 'blackcolorlink ' : ''}}{{\Request::is('contact') ? 'activenavlink' : ''}}"
-                                           href="{{url('contact')}}">CONTACT</a>
+                                           href="{{url('contact')}}">CONTACT US</a>
                                     </li>
                                     @if(!\Illuminate\Support\Facades\Session::has('userId'))
                                     <li class="nav-item onlyonmobile">
@@ -333,42 +368,40 @@
 @yield('content')
 <!--====== FOOTER PART START ======-->
 
-<footer class="footer-area" style="background-image: url('/icons/clouds.png');padding-top: 0px;margin-top: -100px;">
+<footer class="footer-area" style="background-color: rgba(211,211,211,0.24);padding-top: 0px;margin-top: 100px;">
     <div class="container">
         <div class="footer-items" style="margin-top: 0px;border-top: 0px">
             <div class="row">
                 <div class="col-lg-4 col-md-6">
                     <div class="footer-about-1 mt-30" style="padding: 40px;padding-bottom: 0px">
-                        <a href="{{url('')}}"><img src="{{url('')}}/assets/images/logo.png" alt=""
-                                                   style="width: 200px;height: 130px"></a>
-                        <p style="padding-top: 0px">Address: {{env('APP_ADDRESS')}}</p>
-                        <p style="padding-top: 0px">
+                        <a href="{{url('')}}"><img src="{{url('')}}/assets/images/logo.png" alt="Logo"> </a>
+                        <p style="padding-top: 10px;padding-left: 20px">Address: {{env('APP_ADDRESS')}}</p>
+                        <p style="padding-top: 0px;padding-left: 20px">
                             Company Registered in England & Wales No. 13335834
                         </p>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div style="margin: 0 auto;max-width: 200px;margin-top: 180px">
+                <div class="col-lg-4 col-md-6">
+                    <div style="margin: 0 auto;" class="ftlinksresp">
                         <a href="{{url('about')}}">About</a><br>
                         <a href="{{url('user-agreement')}}">User Agreement</a><br>
                         <a href="{{url('privacy-policy')}}">Privacy Policy</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4">
-                    <div style="margin-top: 180px">
-{{--                        <p style="padding: 2px">--}}
-{{--                            Email: <a href="mailto:{{env('APP_EMAIL')}}">{{env('APP_EMAIL')}}</a>--}}
-{{--                        </p>--}}
-                        <p style="padding: 2px">
+                    <div class="ftlinksresp2">
+                  <p style="padding: 1px">
+           {{--               Email: <a href="mailto:{{env('APP_EMAIL')}}">{{env('APP_EMAIL')}}</a>--}}
+                        </p>
+                        <p class="ftlinksresp3">
                             Tel: <a href="tel:{{env('APP_PHONE')}}">{{env('APP_PHONE')}}</a>
                         </p>
-                        <a target="_blank" href="https://www.facebook.com/CopyrightCover" class="fa fa-facebook facustom"></a>
+                        <a target="_blank" href="https://www.facebook.com/CopyrightCover" class="fa fa-facebook facustom mgleft5"></a>
                         <a target="_blank" href="https://twitter.com/CoverCopyright" class="fa fa-twitter facustom"></a>
                     </div>
                 </div>
             </div>
-
-            <div>
+            <div class="mgtop5">
                 <p style="text-align: center;padding: 20px;padding-top: 0px">Copyright 2021 @CopyrightCover Ltd. All Rights
                     Reserved</p>
             </div>
@@ -386,14 +419,19 @@
 {{--            </div>--}}
             <div class="modal-body">
                 <div class="embed-responsive embed-responsive-16by9">
-                    <iframe id="cartoonVideo" class="embed-responsive-item" width="560" height="315" src="//www.youtube.com/embed/YE7VzlLtp-4" allowfullscreen></iframe>
+                    <video width="400" controls id="myVideoPlayer">
+                        <source src="{{url('')}}/video.mov" type="video/mp4">
+{{--                        <source src="mov_bbb.ogg" type="video/ogg">--}}
+                        Your browser does not support HTML video.
+                    </video>
+{{--                    <iframe id="cartoonVideo" class="embed-responsive-item" width="560" height="315" src="//www.youtube.com/embed/X5FZgj0p814" allowfullscreen></iframe>--}}
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 <div class="trustedsite-trustmark" data-type="202" data-width="120"  data-height="50"></div>
+
 
 
 <!--====== FOOTER PART ENDS ======-->
@@ -410,18 +448,21 @@
     $(document).ready(function(){
         /* Get iframe src attribute value i.e. YouTube video url
     and store it in a variable */
-        var url = $("#cartoonVideo").attr('src');
+        // var url = $("#cartoonVideo").attr('src');
 
         /* Assign empty url value to the iframe src attribute when
         modal hide, which stop the video playing */
         $("#myModal").on('hide.bs.modal', function(){
-            $("#cartoonVideo").attr('src', '');
+            var video = document.getElementById("myVideoPlayer");
+                video.pause();
+                video.currentTime = 0;
+            // $("#cartoonVideo").attr('src', '');
         });
 
         /* Assign the initially stored url back to the iframe src
         attribute when modal is displayed again */
         $("#myModal").on('show.bs.modal', function(){
-            $("#cartoonVideo").attr('src', url);
+            // $("#cartoonVideo").attr('src', url);
         });
 
         setTimeout(function () {

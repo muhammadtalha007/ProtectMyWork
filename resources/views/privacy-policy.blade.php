@@ -1,3 +1,36 @@
+<link rel="canonical" href="https://www.copyrightcover.com/privacy-policy"><!DOCTYPE html>
+<!-- COMMON TAGS -->
+<meta charset="utf-8">
+<title>Copyright Cover Privacy Policy</title>
+<!-- Search Engine -->
+<meta name="description" content="Copyright Cover Privacy Policy">
+<meta name="image" content="https://www.copyrightcover.com/assets/images/logo.png">
+<meta name="keywords" content="Copyright Cover Privacy Policy,COPYRIGHT LAW UK, How to copyright your music,The copyright notice about copyright, copyright protection, copyright Cover,UK Copyright Service"/>
+<meta name="ROBOTS" content="NOYDIR" />
+<meta name="ROBOTS" content="NOODP" />
+<meta name="Copyright" content="Copyright Cover Limited" />
+<!-- Schema.org for Google -->
+<meta itemprop="name" content="Copyright Cover">
+<meta itemprop="description" content="Copyright Cover Privacy Policy">
+<meta itemprop="image" content="https://www.copyrightcover.com/assets/images/logo.png">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Copyright Cover">
+<meta name="twitter:description" content="Copyright Cover Privacy Policy ">
+<meta name="twitter:site" content="@CoverCopyright">
+<meta name="twitter:creator" content="@CoverCopyright">
+<meta name="twitter:image:src" content="https://www.copyrightcover.com/assets/images/logo.png">
+<!-- Open Graph general (Facebook, Pinterest & Google+) -->
+<meta property="og:title" content="Copyright Cover">
+<meta property="og:description" content="How to Copyright my creative works">
+<meta property="og:image" content="https://www.copyrightcover.com/assets/images/banner.png">
+<meta property="og:locale" content="England">
+<meta property="og:video" content="https://www.youtube.com/watch?v=https://www.youtube.com/watch?v=X5FZgj0p814">
+<meta property="fb:admins" content="100011001514131">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.copyrightcover.com/privacy-policy">
+
+
 @extends('layouts.landing-app')
 @section('content')
 
@@ -25,7 +58,7 @@
             Copyright Cover Ltd Privacy Policy
         </p>
         <p>
-            This Privacy Policy describes how your personal information is collected, used, and shared when you visit or make a purchase from https://www.protectmywork.com (the “Site”).
+            This Privacy Policy describes how your personal information is collected, used, and shared when you visit or make a purchase from https://www.copyrightcover.com (the “Site”).
         </p>
         <p style="font-weight: bold">
             PERSONAL INFORMATION WE COLLECT
@@ -111,14 +144,14 @@
         <p>
             When you place an order through the Site, we will maintain your Order Information for our records unless and until you ask us to delete this information.
 
-          <br>  [[INSERT IF AGE RESTRICTION IS REQUIRED]]
+          <br>  
 
         </p>
         <p style="font-weight: bold">
             MINORS
         </p>
         <p>
-            The Site is not intended for individuals under the age of [[INSERT AGE]].
+            The Site is not intended for individuals under the age of [[16]].
         </p>
         <p style="font-weight: bold">
             CHANGES

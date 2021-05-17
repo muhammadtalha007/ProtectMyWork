@@ -1,3 +1,36 @@
+<link rel="canonical" href="https://www.copyrightcover.com/about"><!DOCTYPE html>
+<!-- COMMON TAGS -->
+<meta charset="utf-8">
+<title>Copyright Cover About Us</title>
+<!-- Search Engine -->
+<meta name="description" content="Copyright Cover is a swift and secure copyright protection service based in the UK">
+<meta name="image" content="https://www.copyrightcover.com/assets/images/logo.png">
+<meta name="keywords" content="Copyright Review, about copyright, copyright protection, copyright Cover,UK Copyright Service"/>
+<meta name="ROBOTS" content="NOYDIR" />
+<meta name="ROBOTS" content="NOODP" />
+<meta name="Copyright" content="Copyright Cover Limited" />
+<!-- Schema.org for Google -->
+<meta itemprop="name" content="Copyright Cover">
+<meta itemprop="description" content="Copyright Cover is a swift and secure copyright protection service based in the UK">
+<meta itemprop="image" content="https://www.copyrightcover.com/assets/images/logo.png">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Copyright Cover">
+<meta name="twitter:description" content="Copyright Cover is a swift and secure copyright protection service based in the UK">
+<meta name="twitter:site" content="@CoverCopyright">
+<meta name="twitter:creator" content="@CoverCopyright">
+<meta name="twitter:image:src" content="https://www.copyrightcover.com/assets/images/logo.png">
+<!-- Open Graph general (Facebook, Pinterest & Google+) -->
+<meta property="og:title" content="Copyright Cover">
+<meta property="og:description" content="Quick and easy service. Highly pleased with the website ease of us">
+<meta property="og:image" content="https://www.copyrightcover.com/assets/images/banner.png">
+<meta property="og:locale" content="England">
+<meta property="og:video" content="https://www.youtube.com/watch?v=https://www.youtube.com/watch?v=X5FZgj0p814">
+<meta property="fb:admins" content="100011001514131">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.copyrightcover.com/about">
+
+
 @extends('layouts.landing-app')
 @section('content')
 
@@ -5,7 +38,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-8">
-                    <h2 style="text-align: center;color: #6b9ce8">ABOUT COPYRIGHTCOVER</h2>
+                    <h1 style="text-align: center;color: #6b9ce8">ABOUT COPYRIGHTCOVER</h1>
                     <div style="margin: 0 auto;max-width: 100px">
                         <div style="border-bottom: 3px solid #6b9ce8;width: 100px" >
 

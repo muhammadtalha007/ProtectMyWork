@@ -58,15 +58,15 @@ class AuthController extends Controller
                 $user->first_name = $request->firstName;
                 $user->last_name = $request->lastName;
                 $user->email = $request->emailAddress;
-                $user->company_name = $request->companyName;
-                $user->address = $request->addressLineOne . $request->addressLineTwo;
-                $user->city = $request->city;
-                $user->postal_code = $request->postalCode;
-                $user->state = $request->country;
-                $user->country = $request->selectCountry;
-                $user->telephone = $request->telephone;
-                $user->profession = $request->profession;
-                $randomPassword = $this->generateRandomString(10);
+//                $user->company_name = $request->companyName;
+//                $user->address = $request->addressLineOne . $request->addressLineTwo;
+//                $user->city = $request->city;
+//                $user->postal_code = $request->postalCode;
+//                $user->state = $request->country;
+//                $user->country = $request->selectCountry;
+//                $user->telephone = $request->telephone;
+//                $user->profession = $request->profession;
+                $randomPassword = $request->password;
                 $user->password = md5($randomPassword);
                 $result = $user->save();
 				 if ($request->paymentMethod == "stripe"){
@@ -90,7 +90,7 @@ class AuthController extends Controller
                 $oneYearOn = date('Y-m-d',strtotime(date("Y-m-d", time()) . " + 365 day"));
                 $subscription->subscription_expiry = $oneYearOn;
                 $subscription->save();
-                session()->flash('msg', 'Login Credentials sent to your email! Please check your inbox, junk or spam folder.');
+//                session()->flash('msg', 'Login Credentials sent to your email! Please check your inbox, junk or spam folder.');
                 //Email
                 $subject = new SendEmailService(new EmailSubject("Welcome to " . env('APP_NAME') . '. Here is your Credentials to Login!'));
                 $mailTo = new EmailAddress($request->emailAddress);
@@ -100,7 +100,9 @@ class AuthController extends Controller
                 $emailMessage = new EmailMessage($subject->getEmailSubject(), $mailTo, $body);
                 $sendEmail = new EmailSender(new PhpMail(new MailConf("smtp.gmail.com", "admin@dispatch.com", "secret-2021")));
                 $result = $sendEmail->send($emailMessage);
-                return redirect('login');
+                Session::put('userId', $user->id);
+                return redirect('dashboard');
+//                return redirect('login');
             } else {
                 return redirect()->back()->withErrors(['Email Already Exists!']);
             }

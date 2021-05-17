@@ -1,3 +1,35 @@
+<link rel="canonical" href="https://www.copyrightcover.com/contact"><!DOCTYPE html>
+<!-- COMMON TAGS -->
+<meta charset="utf-8">
+<title>Copyright Cover Guides</title>
+<!-- Search Engine -->
+<meta name="description" content="Contact us Today by email. Telephone ">
+<meta name="image" content="https://www.copyrightcover.com/assets/images/logo.png">
+<meta name="keywords" content="Copyright Review, about copyright, copyright protection, copyright Cover,UK Copyright Service"/>
+<meta name="ROBOTS" content="NOYDIR" />
+<meta name="ROBOTS" content="NOODP" />
+<meta name="Copyright" content="Copyright Cover Limited" />
+<!-- Schema.org for Google -->
+<meta itemprop="name" content="Copyright Cover">
+<meta itemprop="description" content="Contact us Today by email | Telephone ">
+<meta itemprop="image" content="https://www.copyrightcover.com/assets/images/logo.png">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Copyright Cover">
+<meta name="twitter:description" content="Contact us Today by email. Telephone ">
+<meta name="twitter:site" content="@CoverCopyright">
+<meta name="twitter:creator" content="@CoverCopyright">
+<meta name="twitter:image:src" content="https://www.copyrightcover.com/assets/images/logo.png">
+<!-- Open Graph general (Facebook, Pinterest & Google+) -->
+<meta property="og:title" content="Copyright Cover">
+<meta property="og:description" content="Contact us Today by email | Telephone ">
+<meta property="og:image" content="https://www.copyrightcover.com/assets/images/banner.png">
+<meta property="og:locale" content="England">
+<meta property="og:video" content="https://www.youtube.com/watch?v=https://www.youtube.com/watch?v=X5FZgj0p814">
+<meta property="fb:admins" content="100011001514131">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.copyrightcover.com/contact">
+
 @extends('layouts.landing-app')
 @section('content')
 
@@ -22,7 +54,7 @@
             <p style="margin-top: 40px">
                 Please see our contact details below. Feel free to email our tech support directly using the form underneath. We aim to respond within 1 working day. If you are missing an email from us, please check your junk mail before contacting us.
 
-
+<div class="trustedsite-trustmark" data-type="211" data-width="120"  data-height="50"></div>
             </p>
             <form method="post" action="{{url("/sendmessage")}}" onsubmit="return validateForm()">
                 {{csrf_field()}}
@@ -66,6 +98,7 @@
                                     <button type="submit" class="main-btn">
                                         SUBMIT
                                     </button>
+                                    
                                 </div>
                             </div>
                         </div>

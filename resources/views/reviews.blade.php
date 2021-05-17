@@ -1,3 +1,37 @@
+<link rel="canonical" href="https://www.copyrightcover.com/reviews"><!DOCTYPE html>
+<!-- COMMON TAGS -->
+<meta charset="utf-8">
+<title>Copyright Cover Reviews</title>
+<!-- Search Engine -->
+<meta name="description" content="Quick and easy service. Highly pleased with the website ease of us">
+<meta name="image" content="https://www.copyrightcover.com/assets/images/logo.png">
+<meta name="keywords" content="Copyright Review, how to copyright, copyright protection, copyright Cover,UK Copyright Service, registration" />
+<meta name="ROBOTS" content="NOYDIR" />
+<meta name="ROBOTS" content="NOODP" />
+<meta name="copyright" content="Copyright Cover Limited" />
+<!-- Schema.org for Google -->
+<meta itemprop="name" content="Copyright Cover">
+<meta itemprop="description" content="Quick and easy service. Highly pleased with the website ease of us">
+<meta itemprop="image" content="https://www.copyrightcover.com/assets/images/logo.png">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Copyright Cover">
+<meta name="twitter:description" content="Quick and easy service. Highly pleased with the website ease of us">
+<meta name="twitter:site" content="@CoverCopyright">
+<meta name="twitter:creator" content="@CoverCopyright">
+<meta name="twitter:image:src" content="https://www.copyrightcover.com/assets/images/logo.png">
+<!-- Open Graph general (Facebook, Pinterest & Google+) -->
+<meta property="og:title" content="Copyright Cover">
+<meta property="og:description" content="Quick and easy service. Highly pleased with the website ease of us">
+<meta property="og:image" content="https://www.copyrightcover.com/assets/images/banner.png">
+<meta property="og:locale" content="England">
+<meta property="og:video" content="https://www.youtube.com/watch?v=https://www.youtube.com/watch?v=X5FZgj0p814">
+<meta property="fb:admins" content="100011001514131">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.copyrightcover.com/reviews">
+
+
+
 @extends('layouts.landing-app')
 @section('content')
 
@@ -16,6 +50,8 @@
 {{--                        <h3 class="title"><span>Check What’s Our</span> Client Say <span>About Us!</span></h3>--}}
 {{--                    </div> <!-- SECTION TITLE -->--}}
                 </div>
+                
+                
             </div> <!-- row -->
             <div class="row justify-content-center">
                 <div class="col-lg-4 col-md-6 col-sm-9">
@@ -49,10 +85,12 @@
                         <div class="icon">
                             <img src="{{url('')}}/assets/images/shape.svg" alt="">
                         </div>
+
                     </div> <!-- testimonial item -->
                 </div>
             </div> <!-- row -->
         </div>
+
     </section>
 
 
