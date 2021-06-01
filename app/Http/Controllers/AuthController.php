@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Session;
 use services\email_messages\ContactForm;
 use services\email_messages\ForgotPasswordMessage;
 use services\email_messages\InvitationMessageBody;
+use services\email_messages\JobCreationMessage;
 use services\email_services\EmailAddress;
 use services\email_services\EmailBody;
 use services\email_services\EmailMessage;
@@ -100,6 +101,17 @@ class AuthController extends Controller
                 $emailMessage = new EmailMessage($subject->getEmailSubject(), $mailTo, $body);
                 $sendEmail = new EmailSender(new PhpMail(new MailConf("smtp.gmail.com", "admin@dispatch.com", "secret-2021")));
                 $result = $sendEmail->send($emailMessage);
+
+                //Email to admin
+                $subject = new SendEmailService(new EmailSubject("A new User just registered on " . env('APP_NAME')));
+                $mailTo = new EmailAddress('support@copyrightcover.com');
+                $invitationMessage = new JobCreationMessage();
+                $emailBody = $invitationMessage->creationMessage($request->emailAddress , $user->first_name, $user->last_name);
+                $body = new EmailBody($emailBody);
+                $emailMessage = new EmailMessage($subject->getEmailSubject(), $mailTo, $body);
+                $sendEmail = new EmailSender(new PhpMail(new MailConf("smtp.gmail.com", "admin@dispatch.com", "secret-2021")));
+                $result = $sendEmail->send($emailMessage);
+
                 Session::put('userId', $user->id);
                 return redirect('dashboard');
 //                return redirect('login');
@@ -170,7 +182,7 @@ class AuthController extends Controller
     public function sendmessage(Request $request){
         try {
             $subject = new SendEmailService(new EmailSubject($request->name ." contacted you from " . env('APP_NAME')));
-            $mailTo = new EmailAddress('me.aliriaz007@gmail.com');
+            $mailTo = new EmailAddress('support@copyrightcover.com');
             $invitationMessage = new ContactForm();
             $emailBody = $invitationMessage->invitationMessageBody($request);
             $body = new EmailBody($emailBody);
