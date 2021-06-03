@@ -70,16 +70,7 @@ class AuthController extends Controller
                 $randomPassword = $request->password;
                 $user->password = md5($randomPassword);
                 $result = $user->save();
-				 if ($request->paymentMethod == "stripe"){
-					 $userCardDetails = new UserCardDetails();
-                $userCardDetails->user_id = $user->id;
-                $userCardDetails->card_holder_name = $request->cardHolderName;
-                $userCardDetails->card_number = $request->cardNumber;
-                $userCardDetails->expiry_month = $request->expiryMonth;
-                $userCardDetails->expiry_year = $request->expiryYear;
-                $userCardDetails->cvv = $request->cvv;
-                $userCardDetails->save();
-				 }
+
 
                 $token = new UserTokens();
                 $token->user_id = $user->id;
@@ -112,7 +103,18 @@ class AuthController extends Controller
                 $sendEmail = new EmailSender(new PhpMail(new MailConf("smtp.gmail.com", "admin@dispatch.com", "secret-2021")));
                 $result = $sendEmail->send($emailMessage);
 
+
                 Session::put('userId', $user->id);
+                if ($request->paymentMethod == "stripe" && !empty($request->cardNumber)){
+                    $userCardDetails = new UserCardDetails();
+                    $userCardDetails->user_id = $user->id;
+                    $userCardDetails->card_holder_name = $request->cardHolderName;
+                    $userCardDetails->card_number = $request->cardNumber;
+                    $userCardDetails->expiry_month = $request->expiryMonth;
+                    $userCardDetails->expiry_year = $request->expiryYear;
+                    $userCardDetails->cvv = $request->cvv;
+                    $userCardDetails->save();
+                }
                 return redirect('dashboard');
 //                return redirect('login');
             } else {
