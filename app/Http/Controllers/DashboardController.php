@@ -397,4 +397,108 @@ class DashboardController extends Controller
     function generateRandomString($length = 10) {
         return substr(str_shuffle(str_repeat($x='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length/strlen($x)) )),1,$length);
     }
+
+    public function savingNewWorkFromAdmin(Request $request)
+    {
+        try {
+            $userId = $request->userId;
+            $currentUser = User::where('id', $userId)->first();
+            $userToken = UserTokens::where('user_id', $userId)->first();
+            if ((int)$userToken->token <= 0){
+                return json_encode(['status' => false,'message' => 'You do not have tokens to create this certificate. Please buy more token from ADD MORE TOKENS section and try again!']);
+            }
+
+            if (!$request->hasfile('fileOne')) {
+                return json_encode(['status' => false,'message' => 'Atleast one File should be uploaded!']);
+            }
+            $certificates = new Certificates();
+            $certificates->user_id = $userId;
+            $certificates->title = $request->title;
+            $certificates->ip = $this->getIPAddress();
+            $randomPassword = $this->generateRandomString(10);
+            $certificates->password = $randomPassword;
+            $certificates->save();
+
+            if ($request->hasfile('fileOne')) {
+                $files = $request->file('fileOne');
+                foreach ($files as $file) {
+                    $name = $request->fileOneName . rand(0, 1000) .time() . '.' . $file->getClientOriginalExtension();
+                    $file->move(base_path('/data') . '/Certificate-Files-' . $userId . '/', $name);
+                    $certificateFiles = new CertificateFiles();
+                    $certificateFiles->certificate_id = $certificates->id;
+                    $certificateFiles->file_name = $name;
+                    $certificateFiles->user_given_name = $request->fileOneName;
+                    $certificateFiles->save();
+                }
+            } else {
+                return json_encode(['status' => false,'message' => 'Atleast one File should be uploaded!']);
+            }
+            if ($request->hasfile('fileTwo')) {
+                $files = $request->file('fileTwo');
+                foreach ($files as $file) {
+                    $name = $request->fileTwoName . rand(0, 1000) . time() . '.' . $file->getClientOriginalExtension();
+                    $file->move(base_path('/data') . '/Certificate-Files-' . $userId . '/', $name);
+                    $certificateFiles = new CertificateFiles();
+                    $certificateFiles->certificate_id = $certificates->id;
+                    $certificateFiles->file_name = $name;
+                    $certificateFiles->user_given_name = $request->fileTwoName;
+                    $certificateFiles->save();
+                }
+            }
+            if ($request->hasfile('fileThree')) {
+                $files = $request->file('fileThree');
+                foreach ($files as $file) {
+                    $name = $request->fileThreeName . rand(0, 1000) . time() . '.' . $file->getClientOriginalExtension();
+                    $file->move(base_path('/data') . '/Certificate-Files-' . $userId . '/', $name);
+                    $certificateFiles = new CertificateFiles();
+                    $certificateFiles->certificate_id = $certificates->id;
+                    $certificateFiles->file_name = $name;
+                    $certificateFiles->user_given_name = $request->fileThreeName;
+                    $certificateFiles->save();
+                }
+            }
+            if ($request->hasfile('fileFour')) {
+                $files = $request->file('fileFour');
+                foreach ($files as $file) {
+                    $name = $request->fileFourName . rand(0, 1000) . time() . '.' . $file->getClientOriginalExtension();
+                    $file->move(base_path('/data') . '/Certificate-Files-' . $userId . '/', $name);
+                    $certificateFiles = new CertificateFiles();
+                    $certificateFiles->certificate_id = $certificates->id;
+                    $certificateFiles->file_name = $name;
+                    $certificateFiles->user_given_name = $request->fileFourName;
+                    $certificateFiles->save();
+                }
+            }
+            if ($request->hasfile('fileFive')) {
+                $files = $request->file('fileFive');
+                foreach ($files as $file) {
+                    $name = $request->fileFiveName . rand(0, 1000) . time() . '.' . $file->getClientOriginalExtension();
+                    $file->move(base_path('/data') . '/Certificate-Files-' . $userId . '/', $name);
+                    $certificateFiles = new CertificateFiles();
+                    $certificateFiles->certificate_id = $certificates->id;
+                    $certificateFiles->file_name = $name;
+                    $certificateFiles->user_given_name = $request->fileFiveName;
+                    $certificateFiles->save();
+                }
+            }
+            $userToken = UserTokens::where('user_id', $userId)->first();
+            $userToken->token = (int)$userToken->token - 1;
+            $userToken->update();
+
+            $subject = new SendEmailService(new EmailSubject("Your work has been protected by " . env('APP_NAME')));
+            $mailTo = new EmailAddress($currentUser->email);
+            $message = new WorkProtected();
+            $emailBody = $message->message($currentUser , $certificates, $randomPassword);
+            $body = new EmailBody($emailBody);
+            $emailMessage = new EmailMessage($subject->getEmailSubject(), $mailTo, $body);
+            $sendEmail = new EmailSender(new PhpMail(new MailConf("smtp.gmail.com", "admin@dispatch.com", "secret-2021")));
+            $result = $sendEmail->send($emailMessage);
+
+            return json_encode(['status' => true,'message' => 'Certificate Created Successfully! Email also sent to customer.']);
+        }catch (\Exception $exception){
+            return json_encode(['status' => false,'message' => $exception->getMessage()]);
+
+        }
+
+    }
 }

@@ -20,3 +20,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 // custom API route
 Route::middleware('auth:api')->get('/user/get', 'UserController@get');
+Route::post('saving-new-work-api', "DashboardController@savingNewWorkFromAdmin");
+
