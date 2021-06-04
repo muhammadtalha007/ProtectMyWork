@@ -1,5 +1,14 @@
 @extends('layouts.dashboard')
 @section('content')
+    <style>
+        .btnhoverchooseFile{
+            background: white;letter-spacing: 4px;width: 187px;float: left;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;text-align: center;color: #6b9ce8;text-transform: uppercase;padding: 7px 0 7px;font-family: 'futura-normalregular';font-size: 15px;border: none;cursor: pointer;border: 2px solid #6b9ce8;
+        }
+        .btnhoverchooseFile:hover{
+            background: #6b9ce8!important;
+            color: white!important;
+        }
+    </style>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     {{--    <div>--}}
     <div class="container" style="max-width: 900px;margin-top: 30px;margin-bottom: 50px">
@@ -41,7 +50,7 @@
                 <div class="col-lg-3" id="drop-area-1">
                     <input style="display: none" type="file" id="fileOne" name="fileOne[]" onchange="setName('fileOne','fileOneName')">
                     <button onclick="document.getElementById('fileOne').click()" type="button"
-                            style=";background: white;letter-spacing: 4px;width: 187px;float: left;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;text-align: center;color: #6b9ce8;text-transform: uppercase;padding: 7px 0 7px;font-family: 'futura-normalregular';font-size: 15px;border: none;cursor: pointer;border: 2px solid #6b9ce8">
+                           class="btnhoverchooseFile">
                         CHOOSE FILE
                     </button>
                 </div>
@@ -54,7 +63,7 @@
                 <div class="col-lg-3" id="drop-area-2">
                     <input style="display: none" type="file" id="fileTwo" name="fileTwo[]"  onchange="setName('fileTwo','fileTwoName')">
                     <button onclick="document.getElementById('fileTwo').click()" type="button"
-                            style="background: white;letter-spacing: 4px;width: 187px;float: left;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;text-align: center;color: #6b9ce8;text-transform: uppercase;padding: 7px 0 7px;font-family: 'futura-normalregular';font-size: 15px;border: none;cursor: pointer;border: 2px solid #6b9ce8">
+                            class="btnhoverchooseFile">
                         CHOOSE FILE
                     </button>
                 </div>
@@ -67,7 +76,7 @@
                 <div class="col-lg-3" id="drop-area-3">
                     <input style="display: none" type="file" id="fileThree" name="fileThree[]" onchange="setName('fileThree','fileThreeName')">
                     <button onclick="document.getElementById('fileThree').click()" type="button"
-                            style="background: white;letter-spacing: 4px;width: 187px;float: left;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;text-align: center;color: #6b9ce8;text-transform: uppercase;padding: 7px 0 7px;font-family: 'futura-normalregular';font-size: 15px;border: none;cursor: pointer;border: 2px solid #6b9ce8">
+                            class="btnhoverchooseFile">
                         CHOOSE FILE
                     </button>
                 </div>
@@ -80,7 +89,7 @@
                 <div class="col-lg-3" id="drop-area-4">
                     <input style="display: none" type="file" id="fileFour" name="fileFour[]" onchange="setName('fileFour','fileFourName')">
                     <button onclick="document.getElementById('fileFour').click()" type="button"
-                            style="background: white;letter-spacing: 4px;width: 187px;float: left;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;text-align: center;color: #6b9ce8;text-transform: uppercase;padding: 7px 0 7px;font-family: 'futura-normalregular';font-size: 15px;border: none;cursor: pointer;border: 2px solid #6b9ce8">
+                            class="btnhoverchooseFile">
                         CHOOSE FILE
                     </button>
                 </div>
@@ -93,7 +102,7 @@
                 <div class="col-lg-3" id="drop-area-5">
                     <input style="display: none" type="file" id="fileFive" name="fileFive[]" onchange="setName('fileFive','fileFiveName')">
                     <button onclick="document.getElementById('fileFive').click()" type="button"
-                            style="background: white;letter-spacing: 4px;width: 187px;float: left;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;text-align: center;color: #6b9ce8;text-transform: uppercase;padding: 7px 0 7px;font-family: 'futura-normalregular';font-size: 15px;border: none;cursor: pointer;border: 2px solid #6b9ce8">
+                            class="btnhoverchooseFile">
                         CHOOSE FILE
                     </button>
                 </div>
