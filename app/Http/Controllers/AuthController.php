@@ -8,6 +8,7 @@ use App\Subscription;
 use App\User;
 use App\UserCardDetails;
 use App\UserTokens;
+use Firebase\JWT\JWT;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use services\email_messages\ContactForm;
@@ -211,5 +212,56 @@ class AuthController extends Controller
 
     public function privacyPolicy(){
         return view('privacy-policy');
+    }
+
+    public function sendresetpasswordlink(Request $request){
+        if (!User::where('email', $request->forgotemail)->exists()){
+            return redirect()->back()->withErrors("Email not Exists!");
+        }
+        try {
+            $subject = new SendEmailService(new EmailSubject("Reset Password Link from " . env('APP_NAME')));
+            $mailTo = new EmailAddress($request->forgotemail);
+            $invitationMessage = new ForgotPasswordMessage();
+            $token = JWT::encode($request->forgotemail, 'Secret-2021');
+            $emailBody = $invitationMessage->forgotPasswordMessage($token);
+            $body = new EmailBody($emailBody);
+            $emailMessage = new EmailMessage($subject->getEmailSubject(), $mailTo, $body);
+            $sendEmail = new EmailSender(new PhpMail(new MailConf("smtp.gmail.com", "admin@dispatch.com", "secret-2021")));
+            $result = $sendEmail->send($emailMessage);
+            session()->flash('msg', 'Link Sent Successfully! Please check your inbox.');
+            return redirect()->back();
+        }catch (\Exception $exception){
+            return redirect()->back()->withErrors($exception->getMessage());
+
+        }
+    }
+
+
+    public function resetPassword($token){
+        $token = JWT::decode($token, 'Secret-2021', array('HS256'));
+        if (empty($token)){
+            return json_encode("Access Denied");
+        }
+        return view('reset-password')->with(['email' => $token]);
+    }
+
+    public function resetPasswordBackend(Request $request){
+        if (!User::where('email', $request->email)->exists()){
+            return redirect()->back()->withErrors("Email not Exists!");
+        }
+        if ($request->password != $request->confirmpassword){
+            return redirect()->back()->withErrors("Password Mismatched!");
+
+        }
+        try {
+            $user = User::where('email', $request->email)->first();
+            $user->password = md5($request->password);
+            $user->update();
+            session()->flash('msg', 'Password Updated! Please login now!');
+            return redirect('login');
+        }catch (\Exception $exception){
+            return redirect()->back()->withErrors($exception->getMessage());
+
+        }
     }
 }

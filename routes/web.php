@@ -52,6 +52,9 @@ Route::get('show-image/{fileId}', "DashboardController@showImage");
 Route::get('about', "AuthController@about");
 Route::get('user-agreement', "AuthController@userAgreement");
 Route::get('privacy-policy', "AuthController@privacyPolicy");
+Route::post('send-reset-password-link', "AuthController@sendresetpasswordlink");
+Route::get('reset-password/{token}', "AuthController@resetPassword");
+Route::post('resetpassword', "AuthController@resetPasswordBackend");
 
 Route::get('logout-user', function (){
     \Illuminate\Support\Facades\Session::flush();
