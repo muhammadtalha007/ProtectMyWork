@@ -2,12 +2,13 @@
 @section('content')
     <style>
         .btnhoverchooseFile{
-            background: white;letter-spacing: 4px;width: 187px;float: left;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;text-align: center;color: #6b9ce8;text-transform: uppercase;padding: 7px 0 7px;font-family: 'futura-normalregular';font-size: 15px;border: none;cursor: pointer;border: 2px solid #6b9ce8;
+            background: white;letter-spacing: 4px;width: 187px;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;text-align: center;color: #6b9ce8;text-transform: uppercase;padding: 7px 0 7px;font-family: 'futura-normalregular';font-size: 15px;border: none;cursor: pointer;border: 2px solid #6b9ce8;
         }
         .btnhoverchooseFile:hover{
             background: #6b9ce8!important;
             color: white!important;
         }
+
     </style>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     {{--    <div>--}}
